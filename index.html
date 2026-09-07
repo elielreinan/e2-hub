@@ -702,6 +702,13 @@
     style.textContent = `
       .site-logo { width: 4rem; height: 2.75rem; object-fit: cover; }
       .footer-logo { width: 5.5rem; height: 3rem; object-fit: cover; }
+      #contact-form label { display: block; color: #bbcabf; font-family: Inter, sans-serif; font-size: .75rem; font-weight: 600; line-height: 1.125rem; letter-spacing: .02em; }
+      #contact-form input, #contact-form select, #contact-form textarea { color: #e0e2ea; font-family: Inter, sans-serif; font-size: .9375rem; line-height: 1.5rem; }
+      #contact-form input::placeholder, #contact-form textarea::placeholder { color: #86948a; opacity: 1; }
+      #contact-form select option { color: #e0e2ea; background: #181c21; }
+      #contact-form, #contact-form input, #contact-form select, #contact-form textarea { min-width: 0; max-width: 100%; box-sizing: border-box; }
+      #contact-form input, #contact-form select, #contact-form textarea { overflow: hidden; }
+      #contact-form + * { min-width: 0; }
       .mobile-menu-toggle, .mobile-nav-panel { display: none; }
       @media (max-width: 1023px) {
         .mobile-menu-toggle { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border: 0; border-radius: 999px; color: #e0e2ea; background: rgba(255,255,255,.06); cursor: pointer; }
@@ -728,7 +735,7 @@
   const brandDescriptor = [...document.querySelectorAll('header span')].find(element => element.textContent.includes('Artur') || element.textContent.includes('Solutions'));
   if (brandDescriptor) brandDescriptor.textContent = 'Solutions';
   const availabilityLabel = [...document.querySelectorAll('header span')].find(element => element.textContent.includes('Q2') || element.textContent.includes('DisponÃ'));
-  if (availabilityLabel) availabilityLabel.textContent = 'sites • bots • automações';
+  if (availabilityLabel) availabilityLabel.parentElement.remove();
   const heroTitle = document.querySelector('h1');
   if (heroTitle) heroTitle.classList.add('vita-hero-title');
   const heroHighlight = document.querySelector('.vita-hero-highlight');
