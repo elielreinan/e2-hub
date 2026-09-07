@@ -1,338 +1,772 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="ProdByE²">
-  <meta name="description" content="Eliel Reinan — Dev Fullstack. Automações, sites, plugins e projetos experimentais. Salvador, 21 anos.">
-  <meta property="og:url" content="https://e2dev.me">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="E² - Projetos e Portfolio">
-  <meta property="og:description" content="Eliel Reinan — Dev Fullstack. Automações, sites, plugins e projetos experimentais.">
-  <meta property="og:image" content="https://e2dev.me/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="E² - Projetos e Portfolio">
-  <meta name="twitter:description" content="Eliel Reinan — Dev Fullstack. Automações, sites, plugins e projetos experimentais.">
-  <link rel="canonical" href="https://e2dev.me/">
-  <title>E² - Projetos e Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Ambient Canvas Layer -->
-  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
-
-  <!-- Scanline Overlay -->
-  <div class="scanlines" aria-hidden="true"></div>
-
-  <!-- Vignette -->
-  <div class="vignette" aria-hidden="true"></div>
-
-  <!-- Floating Particles -->
-  <div id="particles-container" aria-hidden="true"></div>
-
-  <!-- Main Layout -->
-  <div class="page-wrapper">
-
-    <!-- Side Nav / Status Bar -->
-    <aside class="side-nav" aria-label="Navegação lateral">
-      <div class="nav-dot" data-section="home" aria-label="Início">
-        <span class="dot-indicator"></span>
-      </div>
-      <div class="nav-dot" data-section="about" aria-label="Sobre">
-        <span class="dot-indicator"></span>
-      </div>
-      <div class="nav-dot" data-section="freelance" aria-label="Freelance">
-        <span class="dot-indicator"></span>
-      </div>
-      <div class="nav-dot" data-section="projects" aria-label="Projetos">
-        <span class="dot-indicator"></span>
-      </div>
-      <div class="nav-dot" data-section="contact" aria-label="Contato">
-        <span class="dot-indicator"></span>
-      </div>
-      <div class="nav-divider"></div>
-      <div class="nav-status">
-        <span class="status-dot online" aria-hidden="true"></span>
-        <span class="status-text">ONLINE</span>
-      </div>
-    </aside>
-
-    <!-- Progress Bar Top -->
-    <div class="top-progress" aria-hidden="true">
-      <div class="progress-fill" id="top-progress-fill"></div>
-    </div>
-
-    <main class="main-content" id="main-content">
-
-      <!-- HERO SECTION -->
-      <section class="section hero-section" id="home" data-section="home">
-        <div class="hero-inner">
-          <!-- Floating decorative elements -->
-          <div class="hero-decor" aria-hidden="true">
-            <div class="orb orb-1"></div>
-            <div class="orb orb-2"></div>
-            <div class="orb orb-3"></div>
-            <div class="grid-lines"></div>
-          </div>
-
-          <div class="hero-content">
-            <!-- Greeting / Terminal line -->
-            <div class="hero-greeting">
-              <span class="prompt-prefix">>_</span>
-              <span class="greeting-text" id="greeting-text"></span>
-              <span class="cursor-block" aria-hidden="true"></span>
-            </div>
-
-            <!-- Main Identity -->
-            <div class="hero-identity">
-              <h1 class="hero-name" id="hero-name">
-                <span class="name-part" data-text="ELIEL">ELIEL</span>
-                <span class="name-part" data-text="REINAN">REINAN</span>
-              </h1>
-              <p class="hero-title">DEV FULLSTACK</p>
-            </div>
-
-            <!-- Meta badges -->
-            <div class="hero-meta">
-              <div class="meta-item">
-                <span class="meta-label">IDADE</span>
-                <span class="meta-value">21</span>
-              </div>
-              <div class="meta-divider" aria-hidden="true"></div>
-              <div class="meta-item">
-                <span class="meta-label">BASE</span>
-                <span class="meta-value">SALVADOR, BA</span>
-              </div>
-              <div class="meta-divider" aria-hidden="true"></div>
-              <div class="meta-item">
-                <span class="meta-label">STATUS</span>
-                <span class="meta-value status-active">DISPONÍVEL</span>
-              </div>
-            </div>
-
-            <!-- Tagline -->
-            <p class="hero-tagline" id="hero-tagline">
-              Construo automações, sites, plugins e sistemas que funcionam.
-              <br>Código limpo. Design intencional. Entrega real.
+<!DOCTYPE html><html class="dark" lang="pt-BR"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>VITA Solutions — Creative Tech Architect</title><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary":"#ffb783","on-secondary-fixed-variant":"#713700","on-secondary-container":"#451f00","surface-bright":"#36393f","on-primary-fixed":"#002113","on-background":"#e0e2ea","secondary-fixed-dim":"#ffb783","tertiary-fixed":"#68fcbf","inverse-on-surface":"#2d3136","surface-container":"#1c2025","primary":"#4edea3","on-tertiary-container":"#00422c","on-secondary-fixed":"#301400","surface-container-low":"#181c21","tertiary-container":"#00b982","primary-container":"#10b981","on-primary-container":"#00422b","tertiary-fixed-dim":"#45dfa4","surface-container-lowest":"#0a0e13","outline":"#86948a","on-primary":"#003824","on-surface-variant":"#bbcabf","on-tertiary-fixed-variant":"#005137","on-tertiary-fixed":"#002114","on-primary-fixed-variant":"#005236","primary-fixed":"#6ffbbe","inverse-surface":"#e0e2ea","outline-variant":"#3c4a42","surface-container-high":"#262a30","error":"#ffb4ab","on-secondary":"#4f2500","surface-tint":"#4edea3","secondary-container":"#d97722","on-error":"#690005","surface":"#101419","error-container":"#93000a","secondary-fixed":"#ffdcc5","background":"#101419","inverse-primary":"#006c49","on-surface":"#e0e2ea","surface-variant":"#31353b","primary-fixed-dim":"#4edea3","on-tertiary":"#003825","on-error-container":"#ffdad6","surface-dim":"#101419","tertiary":"#45dfa4","surface-container-highest":"#31353b"},borderRadius:{"DEFAULT":"1rem","lg":"2rem","xl":"3rem","full":"9999px"},spacing:{"space-3xl":"4.5rem","space-sm":"0.75rem","space-xs":"0.5rem","space-md":"1rem","container-max":"84rem","space-4xl":"6rem","gutter-mobile":"1rem","space-lg":"1.5rem","space-xl":"2rem","space-2xl":"3rem","space-3xs":"0.125rem","space-2xs":"0.25rem","gutter-desktop":"2rem"},fontFamily:{"display-hero-mobile":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Inter"],"label-code":["JetBrains Mono"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-md":["Inter"],"display-hero":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"label-micro":["JetBrains Mono"]},fontSize:{"display-hero-mobile":["38px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"400"}],"label-code":["13px",{"lineHeight":"18px","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"display-hero":["64px",{"lineHeight":"72px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-md":["28px",{"lineHeight":"36px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"400"}],"label-micro":["11px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 px-gutter-mobile lg:px-gutter-desktop pt-space-xs"><div class="max-w-container-max mx-auto h-20 px-space-md lg:px-space-lg flex items-center justify-between rounded-full bg-surface-container-low/75 backdrop-blur-2xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-xs" data-path="solucoes" href="#"><img alt="Nexus Bio-Solutions Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W_EGih--aoFYnlJaLjkHa19lnMnmBgXX81R85LnNOZ1MEoyXT66ofOEC_DFybYFjfVhHqHDkZYaUj24XpYkEoAxGNT94CJR4KMqnpxTbeBhPimxaflcMmUe7sCSih_DjA4fgkeyPfluOp4lZyyPHNrbVnW7IbaK9yu_pXNSc245i_b44U-Onjv8bb-QaaQ-3cZVDEd6p_IcMrqeGokgNKTy9uegyXAsotN5je9XLUso0bOhhJWaFlx_EQ"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">VITA</span><span class="font-label-micro text-label-micro text-on-surface-variant uppercase tracking-wider">Artur • Solutions</span></div></a><div class="hidden xl:flex items-center gap-space-2xs pl-space-xs py-space-3xs pr-space-xs rounded-full bg-surface-container-high"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-micro text-label-micro text-on-surface-variant">Disponível Q2/Q3</span></div></div><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-on-surface rounded-full px-space-sm py-space-2xs"><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm px-space-sm py-space-2xs transition-colors" data-path="solucoes" href="#">Soluções</a><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm px-space-sm py-space-2xs transition-colors" data-path="arquitetura" href="#">Arquitetura</a><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm px-space-sm py-space-2xs transition-colors" data-path="casos-reais" href="#">Casos Reais</a><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm px-space-sm py-space-2xs transition-colors" data-path="playground-interativo" href="#">Playground Interativo</a><a class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm px-space-sm py-space-2xs transition-colors" data-path="contato" href="#">Contato</a></nav><div class="flex items-center gap-space-sm"><a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-2xs rounded-full bg-primary-container text-on-primary-container font-headline-sm text-body-sm hover:scale-105 transition-transform shadow-[0_0_24px_rgba(16,185,129,0.25)]" data-path="contato" href="#">Iniciar Diálogo</a><div class="flex items-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbwlTvD5-TxC3_vQdL_LOsF1nXS5KnsTfX02jU9tlnNn_D3xYix4h302g0EIOz8p43TqcYuTa-oqJcuHhK-VBqnuGKCDVB6c65h8Wv7_DrWox7qJfoKtjZ8e4Rpin7OTyTj2L2sug0nfq3OR3ZeZUlO3ONiZjtMYxYMWuZoeVOABSf9wuNiP0p5irkSQ7s8YgXUgH1Pz0vv9H4GZ9-QTl5FzNJ0kZJlDWb0S84ZZ1vWQQExIf9pM9z"></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full selection:bg-primary-container selection:text-on-primary-container">
+<!-- HERO SECTION "VIVO E ORGÂNICO" -->
+<section class="relative w-full px-gutter-mobile lg:px-gutter-desktop py-space-3xl lg:py-space-4xl overflow-hidden">
+<!-- Ambient Bio-Gradients & Radial Backdrops -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[36rem] h-[36rem] bg-primary/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+<div class="absolute -top-10 right-10 w-[24rem] h-[24rem] bg-secondary/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+<div class="max-w-container-max mx-auto flex flex-col gap-space-3xl">
+<div class="flex flex-col items-start max-w-4xl gap-space-lg">
+<!-- Live Badge Status -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-2xs rounded-full bg-surface-container-high text-on-surface shadow-sm">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+<span class="font-label-micro text-label-micro text-primary uppercase tracking-wider font-semibold">Disponível para sites, bots e automações</span>
+</div>
+<!-- Headline & Subtitle -->
+<h1 class="font-display-hero text-display-hero-mobile lg:text-display-hero text-on-surface tracking-tight leading-[1.08]">
+          Sites úteis, automações honestas e pequenos sistemas que <span class="text-primary underline decoration-primary/40 underline-offset-8">tiram ideias do papel</span>.
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          Sou dev independente e gosto de transformar problemas do dia a dia em soluções simples: páginas bem cuidadas, bots, integrações e ferramentas sob medida para pequenos negócios e projetos pessoais.
+        </p>
+<!-- CTA Cluster -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs w-full sm:w-auto">
+<a class="inline-flex items-center justify-center gap-space-xs px-space-xl py-space-sm rounded-full bg-primary-container text-on-primary-container font-headline-sm text-body-md hover:scale-[1.03] transition-all duration-300 shadow-[0_0_32px_rgba(16,185,129,0.3)]" href="#contato">
+<span class="">Solicitar Diagnóstico Técnico</span>
+<span class="material-symbols-outlined text-body-md">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-space-2xs px-space-lg py-space-sm rounded-full bg-surface-container-high text-on-surface font-headline-sm text-body-md hover:bg-surface-bright transition-colors shadow-sm" href="#solucoes">
+<span class="">Explorar Stack &amp; Soluções</span>
+<span class="material-symbols-outlined text-body-md">terminal</span>
+</a>
+</div>
+</div>
+<!-- Live Interactive Sandbox / Bio-Digital Terminal -->
+<div class="w-full rounded-lg bg-surface-container-low shadow-xl p-space-md lg:p-space-xl relative overflow-hidden">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md pb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="h-3 w-3 rounded-full bg-error/70"></span>
+<span class="h-3 w-3 rounded-full bg-secondary/70"></span>
+<span class="h-3 w-3 rounded-full bg-primary/70"></span>
+<span class="font-label-code text-label-code text-on-surface-variant ml-space-xs">nexus_runtime_v4.telemetry</span>
+</div>
+<!-- Terminal Tabs -->
+<div class="flex flex-wrap items-center gap-space-2xs bg-surface-container-lowest p-space-3xs rounded-full" id="terminal-tabs">
+<button class="font-label-code text-label-micro px-space-sm py-space-3xs rounded-full bg-surface-container-high text-primary font-semibold transition-all" id="tab-btn-arch" onclick="switchTab('arch')">01. Arquitetura</button>
+<button class="font-label-code text-label-micro px-space-sm py-space-3xs rounded-full text-on-surface-variant hover:text-on-surface transition-all" id="tab-btn-event" onclick="switchTab('event')">02. Event-Driven</button>
+<button class="font-label-code text-label-micro px-space-sm py-space-3xs rounded-full text-on-surface-variant hover:text-on-surface transition-all" id="tab-btn-perf" onclick="switchTab('perf')">03. UI Micro-Bench</button>
+</div>
+</div>
+<!-- Tab Contents -->
+<div class="rounded-DEFAULT bg-surface-container-lowest p-space-md lg:p-space-lg font-label-code text-label-code overflow-x-auto min-h-[220px]">
+<div class="space-y-space-2xs text-on-surface" id="tab-content-arch">
+<div class="text-on-surface-variant">// Projeto em andamento: uma ideia virando produto</div>
+<p class=""><span class="text-secondary">package</span> <span class="text-primary">infrastructure.telemetry</span></p>
+<p class=""><span class="text-secondary">const</span> <span class="text-tertiary">smallProduct</span> = {</p>
+<p class="pl-space-md">interface: <span class="text-primary">'clara e responsiva'</span>, automation: <span class="text-secondary">true</span>,</p>
+<p class="pl-space-md">scope: <span class="text-secondary">'pequeno, testável e útil'</span>, nextStep: <span class="text-primary">'publicar'</span>,</p>
+<p class="">}</p>
+<p class="text-primary-container font-semibold pt-space-xs">✓ Ideia organizada: próxima etapa definida sem complicar</p>
+</div>
+<div class="hidden space-y-space-2xs text-on-surface" id="tab-content-event">
+<div class="text-on-surface-variant">// Automação prática: formulário → planilha → aviso</div>
+<p class=""><span class="text-secondary">const</span> pipeline = <span class="text-tertiary">new</span> <span class="text-primary">AsyncEventOrchestrator</span>({</p>
+<p class="pl-space-md">trigger: <span class="text-secondary">'new_contact'</span>, channel: <span class="text-tertiary-fixed">'whatsapp_or_email'</span>,</p>
+<p class="pl-space-md">steps: <span class="text-primary">['save', 'notify', 'follow_up']</span>,</p>
+<p class="">});</p>
+<p class="text-secondary font-semibold pt-space-xs">⚡ Menos tarefa repetitiva • mais tempo para atender pessoas</p>
+</div>
+<div class="hidden space-y-space-2xs text-on-surface" id="tab-content-perf">
+<div class="text-on-surface-variant">// Interface: leve, acessível e feita para funcionar</div>
+<p class=""><span class="text-primary">Mobile first</span>: <span class="text-tertiary font-bold">sim</span> (layout que se adapta)</p>
+<p class=""><span class="text-primary">Conteúdo claro</span>: <span class="text-tertiary font-bold">sim</span> (sem enrolação)</p>
+<p class=""><span class="text-primary">Manutenção</span>: <span class="text-tertiary font-bold">possível</span> (código compreensível)</p>
+<p class="text-tertiary font-semibold pt-space-xs">✔ Entrega revisada no navegador e pronta para evoluir</p>
+</div>
+</div>
+<!-- Interactive Metrics Bar -->
+<div class="pt-space-lg flex flex-col gap-space-sm border-t border-surface-container-highest/60"><div class="flex flex-wrap items-center justify-between gap-space-xs font-label-micro text-label-micro"><div class="flex items-center gap-space-xs"><span class="flex h-2 w-2 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="text-primary font-bold tracking-wider uppercase">Telemetry Core Engine</span><span class="text-outline">|</span><span class="text-on-surface-variant">OpenTelemetry + Prometheus v2.51</span></div><div class="flex items-center gap-space-xs text-on-surface-variant"><span class="px-space-xs py-space-3xs rounded-full bg-surface-container text-primary font-semibold">Sync: 1.0s</span><span class="hidden sm:inline px-space-xs py-space-3xs rounded-full bg-surface-container text-tertiary font-semibold">p99: 18.4ms</span><span class="px-space-xs py-space-3xs rounded-full bg-surface-container text-on-surface font-semibold">Zero-Downtime Rollouts</span></div></div><div class="grid grid-cols-1 md:grid-cols-4 gap-space-sm"><div class="p-space-sm rounded-DEFAULT bg-surface-container flex flex-col justify-between gap-space-xs border border-surface-container-high/40"><div class="flex items-center justify-between"><span class="font-label-micro text-label-micro text-on-surface-variant uppercase tracking-wider">Throughput Global</span><span class="material-symbols-outlined text-primary text-body-sm">speed</span></div><div class="flex items-baseline gap-space-2xs"><span class="font-headline-md text-headline-md text-on-surface font-bold">52.4k</span><span class="font-label-micro text-label-micro text-primary font-semibold">req/s</span></div><div class="flex items-center justify-between pt-space-3xs text-label-micro font-label-code text-on-surface-variant border-t border-surface-container-highest/30"><span class="flex items-center gap-space-3xs"><span class="h-1.5 w-1.5 rounded-full bg-primary"></span>Peak: 84.1k</span><span class="text-primary font-semibold">+14% w/w</span></div></div><div class="p-space-sm rounded-DEFAULT bg-surface-container flex flex-col justify-between gap-space-xs border border-surface-container-high/40"><div class="flex items-center justify-between"><span class="font-label-micro text-label-micro text-on-surface-variant uppercase tracking-wider">Latência p95 / p99</span><span class="material-symbols-outlined text-secondary text-body-sm">timeline</span></div><div class="flex items-baseline gap-space-xs"><div class="flex items-baseline gap-space-3xs"><span class="font-headline-md text-headline-md text-secondary font-bold">18.4</span><span class="font-label-micro text-label-micro text-secondary">ms</span></div><span class="text-outline text-label-micro font-label-code">p99</span><div class="flex items-baseline gap-space-3xs pl-space-xs"><span class="font-body-md text-body-md text-on-surface font-bold">6.1</span><span class="font-label-micro text-label-micro text-on-surface-variant">ms</span></div><span class="text-outline text-label-micro font-label-code">p95</span></div><div class="flex items-center gap-1 h-3 pt-space-3xs"><div class="flex-1 bg-surface-container-high h-1.5 rounded-full overflow-hidden flex gap-0.5"><div class="bg-primary h-full w-[65%]"></div><div class="bg-secondary h-full w-[25%]"></div><div class="bg-tertiary h-full w-[10%]"></div></div><span class="text-label-micro font-label-code text-primary pl-space-3xs">Jitter &lt; 0.8ms</span></div></div><div class="p-space-sm rounded-DEFAULT bg-surface-container flex flex-col justify-between gap-space-xs border border-surface-container-high/40"><div class="flex items-center justify-between"><span class="font-label-micro text-label-micro text-on-surface-variant uppercase tracking-wider">Multi-Cluster Mesh</span><span class="material-symbols-outlined text-tertiary text-body-sm">hub</span></div><div class="flex flex-wrap items-center gap-space-2xs py-space-3xs font-label-micro text-label-micro"><span class="inline-flex items-center gap-1 px-space-2xs py-space-3xs rounded-full bg-surface-container-high text-primary font-label-code"><span class="h-1.5 w-1.5 rounded-full bg-primary animate-pulse"></span>GRU-01</span><span class="inline-flex items-center gap-1 px-space-2xs py-space-3xs rounded-full bg-surface-container-high text-primary font-label-code"><span class="h-1.5 w-1.5 rounded-full bg-primary"></span>IAD-02</span><span class="inline-flex items-center gap-1 px-space-2xs py-space-3xs rounded-full bg-surface-container-high text-tertiary font-label-code"><span class="h-1.5 w-1.5 rounded-full bg-tertiary"></span>FRA-01</span></div><div class="flex items-center justify-between pt-space-3xs text-label-micro font-label-code text-on-surface-variant border-t border-surface-container-highest/30"><span class="">Consensus: Raft</span><span class="text-tertiary font-semibold">100% In-Sync</span></div></div><div class="p-space-sm rounded-DEFAULT bg-surface-container flex flex-col justify-between gap-space-xs border border-surface-container-high/40"><div class="flex items-center justify-between"><span class="font-label-micro text-label-micro text-on-surface-variant uppercase tracking-wider">Taxa de Erro HTTP</span><span class="material-symbols-outlined text-primary text-body-sm">verified_user</span></div><div class="flex items-baseline gap-space-2xs"><span class="font-headline-md text-headline-md text-primary font-bold">0.001%</span><span class="font-label-micro text-label-micro text-on-surface-variant">5xx/4xx</span></div><div class="flex items-center justify-between pt-space-3xs text-label-micro font-label-code text-on-surface-variant border-t border-surface-container-highest/30"><span class="">Circuit Breakers</span><span class="text-primary font-semibold">All Closed (0 tripped)</span></div></div></div></div>
+</div>
+</div>
+</section>
+<!-- SEÇÃO 2: O ECOSSISTEMA DE SOLUÇÕES -->
+<section class="w-full px-gutter-mobile lg:px-gutter-desktop py-space-3xl lg:py-space-4xl bg-surface-container-lowest" id="solucoes">
+<div class="max-w-container-max mx-auto flex flex-col gap-space-2xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="max-w-xl space-y-space-2xs">
+<span class="font-label-micro text-label-micro text-primary uppercase font-bold tracking-widest">Matriz de Competências</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">O Ecossistema de Soluções</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Serviços diretos para colocar uma presença digital no ar, economizar tempo e organizar uma rotina que ficou manual demais.</p>
+</div>
+<div class="font-label-code text-label-code text-on-surface-variant bg-surface-container px-space-md py-space-xs rounded-full self-start md:self-auto">
+          STACK_VERSION: 2026.INICIANTE
+        </div>
+</div>
+<!-- Grid Bento / 4 Solution Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Card 1 -->
+<div class="group flex flex-col justify-between p-space-xl rounded-lg bg-surface-container-low hover:bg-surface-container transition-all duration-300 shadow-md">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-headline-md">cloud_sync</span>
+</div>
+<span class="font-label-code text-label-micro text-primary px-space-xs py-space-3xs rounded-full bg-surface-container-high">Escala Planetária</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+              Sites e páginas que apresentam seu trabalho
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Landing pages, portfólios e páginas de negócio com visual próprio, boa leitura no celular e uma estrutura simples de manter.
             </p>
-
-            <!-- CTA Buttons -->
-            <div class="hero-ctas">
-              <a href="#freelance" class="btn btn-primary" data-magnetic>
-                <span class="btn-text">CONTRATAR</span>
-                <span class="btn-arrow" aria-hidden="true">→</span>
-                <span class="btn-glow" aria-hidden="true"></span>
-              </a>
-              <a href="#projects" class="btn btn-secondary" data-magnetic>
-                <span class="btn-text">VER PROJETOS</span>
-                <span class="btn-arrow" aria-hidden="true">↓</span>
-              </a>
-            </div>
-
-            <!-- Scroll indicator -->
-            <div class="scroll-indicator" aria-hidden="true">
-              <span class="scroll-text">ROLE</span>
-              <svg class="scroll-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 5v14M19 12l-7 7-7-7"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ABOUT SECTION -->
-      <section class="section about-section" id="about" data-section="about">
-        <div class="section-header">
-          <span class="section-number">01</span>
-          <h2 class="section-title">SOBRE</h2>
-          <div class="section-line" aria-hidden="true"></div>
-        </div>
-
-        <div class="about-grid">
-          <!-- Bio Card -->
-          <article class="about-card bio-card">
-            <div class="card-glow" aria-hidden="true"></div>
-            <div class="card-content">
-              <h3 class="card-title">PERFIL</h3>
-              <div class="bio-text" id="bio-text"></div>
-              <div class="bio-highlights">
-                <div class="highlight-item">
-                  <span class="highlight-icon" aria-hidden="true">▲</span>
-                  <span>TÉCNICO EM DESENVOLVIMENTO DE SISTEMAS — SENAI</span>
+</div>
+<div class="pt-space-lg flex flex-wrap items-center gap-space-xs font-label-micro text-label-micro">
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">HTML / CSS</span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">JavaScript</span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">Responsivo</span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">Publicação</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col justify-between p-space-xl rounded-lg bg-surface-container-low hover:bg-surface-container transition-all duration-300 shadow-md">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-headline-md">devices</span>
+</div>
+<span class="font-label-code text-label-micro text-secondary px-space-xs py-space-3xs rounded-full bg-surface-container-high">Ultra Responsivo</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors">
+              Bots e automações para tarefas repetitivas
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Fluxos que conectam formulários, planilhas, mensagens e notificações para você não precisar repetir o mesmo trabalho todos os dias.
+            </p>
+</div>
+<div class="pt-space-lg flex flex-wrap items-center gap-space-xs font-label-micro text-label-micro">
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">JavaScript</span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">APIs</span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">Webhooks</span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">Planilhas</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col justify-between p-space-xl rounded-lg bg-surface-container-low hover:bg-surface-container transition-all duration-300 shadow-md">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-headline-md">psychology</span>
+</div>
+<span class="font-label-code text-label-micro text-tertiary px-space-xs py-space-3xs rounded-full bg-surface-container-high">IA Aplicada</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-tertiary transition-colors">
+              Pequenos sistemas sob medida
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Ferramentas internas, cadastros, painéis simples e protótipos funcionais para validar uma ideia antes de investir em algo maior.
+            </p>
+</div>
+<div class="pt-space-lg flex flex-wrap items-center gap-space-xs font-label-micro text-label-micro">
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">Formulários</span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">Painéis</span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">Banco simples</span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">Protótipos</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group flex flex-col justify-between p-space-xl rounded-lg bg-surface-container-low hover:bg-surface-container transition-all duration-300 shadow-md">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-headline-md">speed</span>
+</div>
+<span class="font-label-code text-label-micro text-primary px-space-xs py-space-3xs rounded-full bg-surface-container-high">Resgate Crítico</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors">
+              Ajustes, manutenção e evolução
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Correções, melhorias visuais, novas funções e acompanhamento para o projeto continuar evoluindo sem virar uma caixa-preta.
+            </p>
+</div>
+<div class="pt-space-lg flex flex-wrap items-center gap-space-xs font-label-micro text-label-micro">
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">Correções</span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">Melhorias</span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">Integrações</span>
+<span class="px-space-sm py-space-3xs rounded-full bg-surface-container-high text-on-surface-variant">Documentação</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SEÇÃO 3: FILOSOFIA DEV & SOFTWARE CRAFTSMANSHIP -->
+<section class="w-full px-gutter-mobile lg:px-gutter-desktop py-space-3xl lg:py-space-4xl relative">
+<div class="max-w-container-max mx-auto flex flex-col gap-space-3xl">
+<!-- Split: Perfil e Comparativo -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Perfil Artur Nexus -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<div class="relative w-full aspect-square max-w-md mx-auto rounded-lg overflow-hidden bg-surface-container shadow-xl">
+  <img alt="Retrato do desenvolvedor" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbwlTvD5-TxC3_vQdL_LOsF1nXS5KnsTfX02jU9tlnNn_D3xYix4h302g0EIOz8p43TqcYuTa-oqJcuHhK-VBqnuGKCDVB6c65h8Wv7_DrWox7qJfoKtjZ8e4Rpin7OTyTj2L2sug0nfq3OR3ZeZUlO3ONiZjtMYxYMWuZoeVOABSf9wuNiP0p5irkSQ7s8YgXUgH1Pz0vv9H4GZ9-QTl5FzNJ0kZJlDWb0S84ZZ1vWQQExIf9pM9z">
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-space-md left-space-md right-space-md p-space-sm rounded-DEFAULT bg-surface-container-low/90 backdrop-blur-md">
+<div class="flex items-center justify-between">
+<div>
+  <div class="font-headline-sm text-headline-sm text-on-surface">Dev independente</div>
+  <div class="font-label-micro text-label-micro text-primary">Sites, bots e automações</div>
+</div>
+<div class="font-label-code text-label-micro text-on-surface-variant text-right">
+                  12+ Anos Experiência<br>Enterprise Tier
                 </div>
-                <div class="highlight-item">
-                  <span class="highlight-icon" aria-hidden="true">◆</span>
-                  <span>ENGENHARIA DA COMPUTAÇÃO — UNIJORGE (CURSANDO)</span>
-                </div>
-              </div>
+</div>
+</div>
+</div>
+<div class="space-y-space-xs">
+<blockquote class="font-body-lg text-body-lg italic text-on-surface-variant">
+              “Eu acredito em começar pequeno, testar no mundo real e melhorar com calma. Um bom projeto não precisa parecer gigantesco: precisa resolver bem o problema de quem vai usar.”
+            </blockquote>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<a class="font-label-code text-label-code text-primary hover:underline" href="#contato">→ Conectar no LinkedIn</a>
+<a class="font-label-code text-label-code text-primary hover:underline" href="#contato">→ Conversar sobre uma ideia</a>
+<span class="text-on-surface-variant">•</span>
+<a class="font-label-code text-label-code text-on-surface-variant hover:text-on-surface" href="#contato">→ Repositórios &amp; Open Source</a>
+<a class="font-label-code text-label-code text-on-surface-variant hover:text-on-surface" href="#contato">→ Ver possibilidades</a>
+</div>
+</div>
+</div>
+<!-- O Manifesto Comparativo -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<div>
+<span class="font-label-micro text-label-micro text-secondary uppercase font-bold tracking-widest">A Escolha Racional</span>
+<span class="font-label-micro text-label-micro text-secondary uppercase font-bold tracking-widest">Meu jeito de construir</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-2xs">Onde a Arte Encontra a Engenharia</h2>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-2xs">Clareza antes da complexidade</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+              Você acompanha o raciocínio, vê o projeto funcionando cedo e sabe o que está pronto, o que está sendo estudado e qual é o próximo passo.
+            </p>
+</div>
+<div class="space-y-space-md">
+<!-- Comparison Row 1 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md p-space-md rounded-DEFAULT bg-surface-container-low shadow-sm">
+<div class="space-y-space-3xs">
+<div class="font-label-micro text-label-micro text-error uppercase font-semibold">✕ Modelo Tradicional / Fábricas</div>
+<div class="font-label-micro text-label-micro text-error uppercase font-semibold">✕ Projeto confuso</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Camadas de intermediários (PM, PO, Júnior repassando ticket), 60% do tempo gasto traduzindo requisitos e código descartável.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Muitas promessas, termos difíceis e uma entrega que só aparece quando já ficou tarde para ajustar.</p>
+</div>
+<div class="space-y-space-3xs bg-surface-container p-space-sm rounded-DEFAULT">
+<div class="font-label-micro text-label-micro text-primary uppercase font-semibold">✓ Software Craftsmanship Direto</div>
+<div class="font-label-micro text-label-micro text-primary uppercase font-semibold">✓ Conversa direta</div>
+<p class="font-body-sm text-body-sm text-on-surface">Comunicação direta com o arquiteto decisor. Velocidade 3x maior, compreensão profunda do negócio e zero perda de contexto.</p>
+<p class="font-body-sm text-body-sm text-on-surface">Você fala com quem está construindo, tira dúvidas e participa das escolhas sem precisar traduzir sua ideia várias vezes.</p>
+</div>
+</div>
+<!-- Comparison Row 2 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md p-space-md rounded-DEFAULT bg-surface-container-low shadow-sm">
+<div class="space-y-space-3xs">
+<div class="font-label-micro text-label-micro text-error uppercase font-semibold">✕ Arquitetura Genérica Copia-e-Cola</div>
+<div class="font-label-micro text-label-micro text-error uppercase font-semibold">✕ Começar grande demais</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Templates pesados, gargalos de escalabilidade invisíveis e contas de nuvem que quadruplicam ao atingir tração.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tentar construir tudo de uma vez aumenta o custo, atrasa o aprendizado e pode esconder o que as pessoas realmente precisam.</p>
+</div>
+<div class="space-y-space-3xs bg-surface-container p-space-sm rounded-DEFAULT">
+<div class="font-label-micro text-label-micro text-primary uppercase font-semibold">✓ Arquitetura Sob Medida &amp; Sustentável</div>
+<div class="font-label-micro text-label-micro text-primary uppercase font-semibold">✓ Primeiro passo possível</div>
+<p class="font-body-sm text-body-sm text-on-surface">Cada linha escrita com propósito. Custo de computação reduzido em até 70%, código auditável e modular para os próximos 5 anos.</p>
+<p class="font-body-sm text-body-sm text-on-surface">Começamos com o essencial, validamos no uso real e deixamos o caminho aberto para crescer quando fizer sentido.</p>
+</div>
+</div>
+<!-- Comparison Row 3 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md p-space-md rounded-DEFAULT bg-surface-container-low shadow-sm">
+<div class="space-y-space-3xs">
+<div class="font-label-micro text-label-micro text-error uppercase font-semibold">✕ Entregas em Cascata &amp; Incerteza</div>
+<div class="font-label-micro text-label-micro text-error uppercase font-semibold">✕ Sumir até a entrega</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Meses sem ver software real rodando, com surpresas desagradáveis no fim do cronograma.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Passar semanas sem uma versão para olhar torna difícil perceber cedo o que precisa mudar.</p>
+</div>
+<div class="space-y-space-3xs bg-surface-container p-space-sm rounded-DEFAULT">
+<div class="font-label-micro text-label-micro text-primary uppercase font-semibold">✓ Ciclos Semanais com Deploy Real</div>
+<div class="font-label-micro text-label-micro text-primary uppercase font-semibold">✓ Mostrar enquanto constrói</div>
+<p class="font-body-sm text-body-sm text-on-surface">Software funcional entregue em ambientes de staging a cada sprint, testado e validado sob carga real.</p>
+<p class="font-body-sm text-body-sm text-on-surface">Entregas curtas e demonstrações simples para você acompanhar, testar e corrigir a direção com tranquilidade.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SEÇÃO 4: CALCULADORA INTERATIVA DE ESCOPO / ESTIMADOR -->
+<section class="w-full px-gutter-mobile lg:px-gutter-desktop py-space-3xl lg:py-space-4xl bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto flex flex-col items-center gap-space-2xl">
+<div class="text-center max-w-2xl space-y-space-2xs">
+<span class="font-label-micro text-label-micro text-primary uppercase font-bold tracking-widest">Ponto de partida</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Vamos descobrir o tamanho da ideia</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Escolha o tipo de ajuda que mais se aproxima do que você precisa. O resultado é uma conversa inicial, não uma promessa fechada.
+        </p>
+</div>
+<!-- Calculadora Box -->
+<div class="w-full max-w-4xl p-space-xl lg:p-space-2xl rounded-lg bg-surface-container-low shadow-xl flex flex-col gap-space-xl">
+<!-- Seleção de Desafio -->
+<div class="space-y-space-sm">
+<label class="font-headline-sm text-headline-sm text-on-surface block">1. Qual é o seu desafio prioritário?</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm" id="challenge-options">
+<button class="challenge-pill active p-space-md rounded-DEFAULT bg-primary-container text-on-primary-container font-headline-sm text-body-sm text-left transition-all" onclick="selectChallenge('mvp', this)" type="button">
+<div class="font-bold">Site ou portfólio</div>
+<div class="font-body-sm text-body-sm opacity-90">Uma presença digital clara e bonita</div>
+</button>
+<button class="challenge-pill p-space-md rounded-DEFAULT bg-surface-container text-on-surface font-headline-sm text-body-sm text-left hover:bg-surface-container-high transition-all" onclick="selectChallenge('scale', this)" type="button">
+<div class="font-bold">Bot ou automação</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Menos tarefas manuais no dia a dia</div>
+</button>
+<button class="challenge-pill p-space-md rounded-DEFAULT bg-surface-container text-on-surface font-headline-sm text-body-sm text-left hover:bg-surface-container-high transition-all" onclick="selectChallenge('ai', this)" type="button">
+<div class="font-bold">Sistema pequeno</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Uma ferramenta feita para sua rotina</div>
+</button>
+</div>
+</div>
+<!-- Slider de Complexidade / Prazo -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-headline-sm text-headline-sm text-on-surface">2. Quanto você imagina para a primeira versão?</label>
+<span class="font-label-code text-label-code text-primary font-bold" id="timeline-indicator">Primeiro passo (1-2 semanas)</span>
+</div>
+<input class="w-full accent-primary h-2 bg-surface-container-highest rounded-lg cursor-pointer" id="timeline-slider" max="3" min="1" oninput="updateEstimator(this.value)" type="range" value="1">
+<div class="flex justify-between font-label-micro text-label-micro text-on-surface-variant">
+<span class="">Começo (1-2 sem)</span>
+<span class="">Pequeno projeto (3-5 sem)</span>
+<span class="">Projeto maior (a combinar)</span>
+</div>
+</div>
+<!-- Resultado Dinâmico -->
+<div class="p-space-lg rounded-DEFAULT bg-surface-container flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg">
+<div class="space-y-space-3xs max-w-lg">
+<span class="font-label-micro text-label-micro text-primary uppercase font-bold">Sugestão inicial</span>
+<div class="font-headline-md text-headline-md text-on-surface" id="est-title">Landing page com formulário</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="est-desc">
+              Uma primeira versão enxuta para explicar seu trabalho, receber contatos e aprender com as visitas.
+            </p>
+</div>
+<a class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-full bg-primary-container text-on-primary-container font-headline-sm text-body-sm shrink-0 hover:scale-105 transition-all shadow-sm" href="#contato">
+<span class="">Iniciar com Este Escopo</span>
+<span class="material-symbols-outlined text-body-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SEÇÃO 5: ESTUDOS DE CASO E RESULTADOS TANGÍVEIS -->
+<section class="w-full px-gutter-mobile lg:px-gutter-desktop py-space-3xl lg:py-space-4xl" id="casos-reais">
+<div class="max-w-container-max mx-auto flex flex-col gap-space-2xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="max-w-xl space-y-space-2xs">
+<span class="font-label-micro text-label-micro text-tertiary uppercase font-bold tracking-widest">Projetos que fazem sentido</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Ideias pequenas, entregas visíveis</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Exemplos do tipo de problema que posso ajudar a organizar e transformar em uma primeira versão.</p>
+</div>
+<div class="flex items-center gap-space-xs text-primary font-label-code text-label-code">
+<span class="material-symbols-outlined text-body-md">verified</span>
+<span class="">Cada entrega combinada com clareza</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg">
+<!-- Case 1: Fintech -->
+<div class="flex flex-col justify-between p-space-xl rounded-lg bg-surface-container-low shadow-md space-y-space-lg">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-micro text-label-micro px-space-xs py-space-3xs rounded-full bg-surface-container-high text-primary">Site • Presença digital</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Exemplo</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">
+              Portfólio para apresentar um trabalho autoral
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Desafio:</strong> A pessoa tinha bons projetos, mas não tinha um lugar próprio para mostrar processo, contato e próximos passos.
+            </p>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Solução:</strong> Página responsiva com seções curtas, identidade visual própria, formulário e links organizados.
+            </p>
+</div>
+<div class="pt-space-md space-y-space-xs">
+<div class="p-space-sm rounded-DEFAULT bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Resultado:</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Mais clareza</span>
+</div>
+<div class="flex flex-wrap gap-space-3xs font-label-micro text-label-micro text-on-surface-variant">
+<span class="">HTML</span> • <span class="">CSS</span> • <span class="">JavaScript</span>
+</div>
+</div>
+</div>
+<!-- Case 2: HealthTech AI -->
+<div class="flex flex-col justify-between p-space-xl rounded-lg bg-surface-container-low shadow-md space-y-space-lg">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-micro text-label-micro px-space-xs py-space-3xs rounded-full bg-surface-container-high text-secondary">Automação • Rotina</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Exemplo</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">
+              Bot para organizar pedidos e avisar a equipe
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Desafio:</strong> Mensagens chegavam por canais diferentes e alguém precisava copiar tudo para uma lista manual.
+            </p>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Solução:</strong> Automação simples que recebe a mensagem, salva os dados importantes e envia um aviso para a pessoa certa.
+            </p>
+</div>
+<div class="pt-space-md space-y-space-xs">
+<div class="p-space-sm rounded-DEFAULT bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Resultado:</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">Menos cópia</span>
+</div>
+<div class="flex flex-wrap gap-space-3xs font-label-micro text-label-micro text-on-surface-variant">
+<span class="">APIs</span> • <span class="">Webhooks</span> • <span class="">Planilhas</span>
+</div>
+</div>
+</div>
+<!-- Case 3: E-commerce Scale -->
+<div class="flex flex-col justify-between p-space-xl rounded-lg bg-surface-container-low shadow-md space-y-space-lg">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-micro text-label-micro px-space-xs py-space-3xs rounded-full bg-surface-container-high text-tertiary">Sistema • Organização</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Exemplo</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">
+              Painel simples para acompanhar uma operação
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Desafio:</strong> Informações importantes ficavam espalhadas em mensagens e arquivos difíceis de consultar.
+            </p>
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong>Solução:</strong> Uma tela única para cadastrar, consultar e atualizar os dados essenciais da rotina.
+            </p>
+</div>
+<div class="pt-space-md space-y-space-xs">
+<div class="p-space-sm rounded-DEFAULT bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Resultado:</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">Tudo no lugar</span>
+</div>
+<div class="flex flex-wrap gap-space-3xs font-label-micro text-label-micro text-on-surface-variant">
+<span class="">Interface web</span> • <span class="">Dados</span> • <span class="">Filtros</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SEÇÃO 6: CONTATO & FECHAMENTO "INICIE A PARCERIA" -->
+<section class="w-full px-gutter-mobile lg:px-gutter-desktop py-space-3xl lg:py-space-4xl bg-surface-container-lowest" id="contato">
+<div class="max-w-container-max mx-auto">
+<div class="rounded-xl bg-surface-container-low p-space-xl lg:p-space-3xl shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-space-2xl">
+<!-- Coluna Esquerda: Contexto & Garantias -->
+<div class="lg:col-span-5 flex flex-col justify-between space-y-space-xl">
+<div class="space-y-space-md">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-3xs rounded-full bg-surface-container-high text-primary font-label-micro text-label-micro font-semibold">
+<span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+              DIÁLOGO ESTRATÉGICO
             </div>
-          </article>
-
-          <!-- Stack Card -->
-          <article class="about-card stack-card">
-            <div class="card-glow" aria-hidden="true"></div>
-            <div class="card-content">
-              <h3 class="card-title">STACK</h3>
-              <div class="stack-cloud" id="stack-cloud"></div>
-            </div>
-          </article>
-
-          <!-- Focus Card -->
-          <article class="about-card focus-card">
-            <div class="card-glow" aria-hidden="true"></div>
-            <div class="card-content">
-              <h3 class="card-title">FOCO ATUAL</h3>
-              <ul class="focus-list" id="focus-list"></ul>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- FREELANCE SECTION -->
-      <section class="section freelance-section" id="freelance" data-section="freelance">
-        <div class="section-header">
-          <span class="section-number">02</span>
-          <h2 class="section-title">FREELANCE</h2>
-          <div class="section-line" aria-hidden="true"></div>
-        </div>
-
-        <div class="freelance-intro" id="freelance-intro"></div>
-
-        <div class="services-grid" id="services-grid">
-          <!-- Services injected by JS -->
-        </div>
-
-        <div class="freelance-cta">
-          <div class="cta-card">
-            <div class="cta-glow" aria-hidden="true"></div>
-            <div class="cta-content">
-              <h3>VAMOS CONVERSAR?</h3>
-              <p>Me manda uma mensagem direta no GitHub ou LinkedIn. Respondo rápido.</p>
-              <div class="cta-links">
-                <a href="https://github.com/Eli2Dev" target="_blank" rel="noopener" class="cta-link" data-magnetic>
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                  <span>GITHUB</span>
-                </a>
-                <a href="https://linkedin.com/in/eliel-reis" target="_blank" rel="noopener" class="cta-link" data-magnetic>
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                  <span>LINKEDIN</span>
-                </a>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">
+              Tem uma ideia simples que precisa sair do papel?
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Me conte o que você quer criar, automatizar ou organizar. Eu retorno com perguntas objetivas, uma primeira leitura do escopo e o que consigo fazer agora.
+            </p>
+</div>
+<!-- Tríade de Garantias -->
+<div class="space-y-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-headline-sm">schedule</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<strong>Conversa clara:</strong> Primeiro entendo o problema e o resultado esperado.
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS SECTION -->
-      <section class="section projects-section" id="projects" data-section="projects">
-        <div class="section-header">
-          <span class="section-number">03</span>
-          <h2 class="section-title">PROJETOS</h2>
-          <div class="section-line" aria-hidden="true"></div>
-        </div>
-
-        <p class="projects-intro" id="projects-intro"></p>
-
-        <div class="projects-list" id="projects-list">
-          <!-- Projects injected by JS -->
-        </div>
-      </section>
-
-      <!-- CONTACT / FOOTER SECTION -->
-      <section class="section contact-section" id="contact" data-section="contact">
-        <div class="section-header">
-          <span class="section-number">04</span>
-          <h2 class="section-title">CONTATO</h2>
-          <div class="section-line" aria-hidden="true"></div>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h3 class="contact-title">VAMOS TRABALHAR JUNTOS?</h3>
-            <p class="contact-desc" id="contact-desc"></p>
-
-            <div class="contact-methods">
-              <a href="https://github.com/Eli2Dev" target="_blank" rel="noopener" class="contact-method" data-magnetic>
-                <div class="method-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                </div>
-                <div class="method-info">
-                  <span class="method-label">GITHUB</span>
-                  <span class="method-value">@Eli2Dev</span>
-                </div>
-              </a>
-
-              <a href="https://linkedin.com/in/eliel-reis" target="_blank" rel="noopener" class="contact-method" data-magnetic>
-                <div class="method-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </div>
-                <div class="method-info">
-                  <span class="method-label">LINKEDIN</span>
-                  <span class="method-value">eliel-reis</span>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="contact-form-wrapper">
-            <form class="contact-form" id="contact-form" action="https://formspree.io/f/SEU_ID_AQUI" method="POST">
-              <div class="form-group">
-                <label for="name" class="form-label">NOME</label>
-                <input type="text" id="name" name="name" class="form-input" placeholder="Seu nome" required>
-                <span class="form-line" aria-hidden="true"></span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-headline-sm">lock</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<strong>Escopo pequeno:</strong> A primeira versão nasce com o essencial, sem excesso.
               </div>
-              <div class="form-group">
-                <label for="email" class="form-label">EMAIL</label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="seu@email.com" required>
-                <span class="form-line" aria-hidden="true"></span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-headline-sm">cycle</span>
+<div class="font-body-sm text-body-sm text-on-surface">
+<strong>Aprendizado contínuo:</strong> Você acompanha e ajuda a ajustar o caminho.
               </div>
-              <div class="form-group">
-                <label for="project" class="form-label">TIPO DE PROJETO</label>
-                <select id="project" name="project" class="form-select" required>
-                  <option value="">Selecione...</option>
-                  <option value="automation">Automação / Script</option>
-                  <option value="website">Site / Landing Page</option>
-                  <option value="plugin">Plugin / Extensão</option>
-                  <option value="api">API / Backend</option>
-                  <option value="other">Outro</option>
-                </select>
-                <span class="form-line" aria-hidden="true"></span>
-              </div>
-              <div class="form-group">
-                <label for="message" class="form-label">DETALHES</label>
-                <textarea id="message" name="message" class="form-textarea" placeholder="Conte sobre seu projeto, prazo, orçamento..." required></textarea>
-                <span class="form-line" aria-hidden="true"></span>
-              </div>
-              <button type="submit" class="btn btn-primary form-submit" data-magnetic>
-                <span class="btn-text">ENVIAR PROPOSTA</span>
-                <span class="btn-arrow" aria-hidden="true">→</span>
-                <span class="btn-glow" aria-hidden="true"></span>
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+</div>
+</div>
+<!-- Canais Rápidos -->
+<div class="pt-space-md flex flex-wrap items-center gap-space-sm">
+<a class="inline-flex items-center gap-space-2xs px-space-md py-space-xs rounded-full bg-surface-container text-on-surface hover:text-primary font-headline-sm text-body-sm transition-colors shadow-sm" href="https://wa.me/5511999999999" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-body-md">chat</span>
+<span class="">Falar pelo WhatsApp</span>
+</a>
+<button class="inline-flex items-center gap-space-2xs px-space-md py-space-xs rounded-full bg-surface-container text-on-surface hover:text-secondary font-headline-sm text-body-sm transition-colors shadow-sm" onclick="openCalendlyMock()">
+<span class="material-symbols-outlined text-body-md">calendar_month</span>
+<span class="">Abrir o formulário</span>
+</button>
+</div>
+</div>
+<!-- Coluna Direita: Formulário de Contato -->
+<div class="lg:col-span-7 bg-surface-container p-space-lg lg:p-space-xl rounded-lg shadow-sm">
+<form class="flex flex-col gap-space-md" id="contact-form" onsubmit="handleFormSubmit(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-space-3xs">
+<label class="font-label-micro text-label-micro text-on-surface-variant uppercase font-semibold" for="client-name">Seu Nome *</label>
+<input class="w-full px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="client-name" placeholder="Ex: Lucas Mendes" required="" type="text">
+</div>
+<div class="space-y-space-3xs">
+<label class="font-label-micro text-label-micro text-on-surface-variant uppercase font-semibold" for="client-email">E-mail Profissional *</label>
+<input class="w-full px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="client-email" placeholder="lucas@empresa.com" required="" type="email">
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-space-3xs">
+<label class="font-label-micro text-label-micro text-on-surface-variant uppercase font-semibold" for="client-company">Empresa / Produto</label>
+<input class="w-full px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="client-company" placeholder="Ex: NexusPay Corp" type="text">
+</div>
+<div class="space-y-space-3xs">
+<label class="font-label-micro text-label-micro text-on-surface-variant uppercase font-semibold" for="client-budget">Tamanho imaginado</label>
+<select class="w-full px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="client-budget">
+<option value="range1">Uma página ou ajuste</option>
+<option selected="" value="range2">Um pequeno projeto</option>
+<option value="range3">Ainda estou descobrindo</option>
+<option value="audit">Quero entender as possibilidades</option>
+</select>
+</div>
+</div>
+<div class="space-y-space-3xs">
+<label class="font-label-micro text-label-micro text-on-surface-variant uppercase font-semibold" for="client-message">O que você quer criar ou melhorar? *</label>
+<textarea class="w-full px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary resize-none shadow-sm" id="client-message" placeholder="Pode explicar do seu jeito: qual tarefa, ideia ou problema você quer resolver?" required="" rows="4"></textarea>
+</div>
+<div class="pt-space-xs">
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-space-sm rounded-full bg-primary-container text-on-primary-container font-headline-sm text-body-md hover:scale-[1.02] transition-all shadow-[0_0_24px_rgba(16,185,129,0.25)]" id="submit-btn" type="submit">
+<span class="">Enviar Solicitação de Diagnóstico</span>
+<span class="material-symbols-outlined text-body-md">send</span>
+</button>
+</div>
+<div class="hidden p-space-sm rounded-DEFAULT bg-surface-container-high text-primary font-label-code text-label-code flex items-center gap-space-xs" id="form-feedback">
+<span class="material-symbols-outlined text-body-md">check_circle</span>
+<span class="">Mensagem recebida! Vou ler a ideia e responder com os próximos passos possíveis.</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Terminal Tab Switcher
+  function switchTab(tabKey) {
+    const tabs = ['arch', 'event', 'perf'];
+    tabs.forEach(k => {
+      const content = document.getElementById('tab-content-' + k);
+      const btn = document.getElementById('tab-btn-' + k);
+      if (k === tabKey) {
+        content.classList.remove('hidden');
+        btn.classList.add('bg-surface-container-high', 'text-primary', 'font-semibold');
+        btn.classList.remove('text-on-surface-variant');
+      } else {
+        content.classList.add('hidden');
+        btn.classList.remove('bg-surface-container-high', 'text-primary', 'font-semibold');
+        btn.classList.add('text-on-surface-variant');
+      }
+    });
+  }
 
-    </main>
+  // Interactive Estimator Engine
+  let currentChallenge = 'mvp';
 
-    <!-- Footer Bar -->
-    <footer class="footer-bar">
-      <div class="footer-left">
-        <span class="footer-brand" data-text="ProdByE²">ProdByE²</span>
-      </div>
-      <div class="footer-center">
-        <span class="footer-version">v1.0.0</span>
-      </div>
-      <div class="footer-right">
-        <span class="footer-code">Coded with ██████ by Eli2Dev</span>
-      </div>
-    </footer>
+  const estimatorPresets = {
+    mvp: {
+      1: {
+        title: 'Site essencial para começar',
+        desc: 'Uma página clara com as informações principais, contato e uma estrutura que você consegue atualizar depois.',
+        timeline: 'Primeiro passo (1-2 Semanas)'
+      },
+      2: {
+        title: 'Site com mais personalidade',
+        desc: 'Mais seções, interações leves e uma experiência pensada para mostrar seu trabalho ou negócio com calma.',
+        timeline: 'Pequeno projeto (3-5 Semanas)'
+      },
+      3: {
+        title: 'Projeto maior, por etapas',
+        desc: 'Quando a ideia pedir mais páginas ou funções, organizamos uma etapa por vez e aprendemos com cada entrega.',
+        timeline: 'Projeto maior (a combinar)'
+      }
+    },
+    scale: {
+      1: {
+        title: 'Automação de uma tarefa',
+        desc: 'Escolhemos uma tarefa repetitiva e desenhamos um fluxo simples para testar se a automação realmente ajuda.',
+        timeline: 'Primeiro passo (1-2 Semanas)'
+      },
+      2: {
+        title: 'Bot conectado ao seu fluxo',
+        desc: 'Um bot ou integração que recebe informações, organiza os dados e avisa você ou sua equipe no canal certo.',
+        timeline: 'Pequeno projeto (3-5 Semanas)'
+      },
+      3: {
+        title: 'Automação em pequenas etapas',
+        desc: 'Se o fluxo for maior, dividimos em partes pequenas para entender o que vale a pena automatizar primeiro.',
+        timeline: 'Projeto maior (a combinar)'
+      }
+    },
+    ai: {
+      1: {
+        title: 'Protótipo de uma ideia',
+        desc: 'Uma primeira versão simples para experimentar uma função inteligente sem prometer mais do que o teste consegue entregar.',
+        timeline: 'Primeiro passo (1-2 Semanas)'
+      },
+      2: {
+        title: 'Ferramenta com apoio de IA',
+        desc: 'Uma função pontual para resumir, classificar ou organizar conteúdo, sempre com revisão humana e escopo controlado.',
+        timeline: 'Pequeno projeto (3-5 Semanas)'
+      },
+      3: {
+        title: 'Descobrir se IA faz sentido',
+        desc: 'Antes de construir algo grande, avaliamos uma tarefa concreta e um caminho simples para testar a ideia.',
+        timeline: 'Projeto maior (a combinar)'
+      }
+    }
+  };
 
-  </div>
+  function selectChallenge(type, btnElement) {
+    currentChallenge = type;
+    document.querySelectorAll('.challenge-pill').forEach(b => {
+      b.classList.remove('bg-primary-container', 'text-on-primary-container');
+      b.classList.add('bg-surface-container', 'text-on-surface');
+    });
+    btnElement.classList.add('bg-primary-container', 'text-on-primary-container');
+    btnElement.classList.remove('bg-surface-container', 'text-on-surface');
+    const sliderVal = document.getElementById('timeline-slider').value;
+    updateEstimator(sliderVal);
+  }
 
-  <script src="app.js"></script>
-</body>
-</html>
+  function updateEstimator(val) {
+    const config = estimatorPresets[currentChallenge][val];
+    document.getElementById('timeline-indicator').innerText = config.timeline;
+    document.getElementById('est-title').innerText = config.title;
+    document.getElementById('est-desc').innerText = config.desc;
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    const feedback = document.getElementById('form-feedback');
+    btn.disabled = true;
+    btn.innerHTML = 'Processando...';
+    setTimeout(() => {
+      feedback.classList.remove('hidden');
+      btn.innerHTML = 'Enviado com Sucesso!';
+      btn.classList.add('opacity-75');
+      e.target.reset();
+    }, 600);
+  }
+
+  document.title = 'Eli Dev — Sites, Bots e Automações';
+  const brandMark = [...document.querySelectorAll('header span')].find(element => element.textContent.trim() === 'VITA');
+  if (brandMark) brandMark.textContent = '2E';
+  const brandDescriptor = [...document.querySelectorAll('header span')].find(element => element.textContent.includes('Artur') || element.textContent.includes('Solutions'));
+  if (brandDescriptor) brandDescriptor.textContent = 'Solutions';
+  const availabilityLabel = [...document.querySelectorAll('header span')].find(element => element.textContent.includes('Q2') || element.textContent.includes('DisponÃ'));
+  if (availabilityLabel) availabilityLabel.textContent = 'sites • bots • automações';
+  const footerBrand = [...document.querySelectorAll('span')].find(element => element.textContent.trim() === 'VITA Solutions');
+  if (footerBrand) footerBrand.textContent = '2E Solutions';
+  const footerDescription = [...document.querySelectorAll('p')].find(element => element.textContent.includes('Engenharia de software biomimética'));
+  if (footerDescription) footerDescription.textContent = 'Sites, bots, automações e pequenos sistemas construídos com cuidado para pessoas e negócios reais pela 2E Solutions.';
+  const throughputMetric = [...document.querySelectorAll('span')].find(element => element.textContent.trim() === '52.4k');
+  if (throughputMetric) throughputMetric.textContent = '1';
+  const throughputLabel = [...document.querySelectorAll('span')].find(element => element.textContent.trim() === 'req/s');
+  if (throughputLabel) throughputLabel.textContent = 'ideia por vez';
+  const experienceLabel = [...document.querySelectorAll('div')].find(element => element.textContent.includes('12+ Anos Experiência') && element.querySelector('br') && element.children.length === 1);
+  if (experienceLabel) experienceLabel.innerHTML = 'Começando agora<br>Com atenção aos detalhes';
+  const oldPromise = [...document.querySelectorAll('p')].find(element => element.textContent.includes('Custo de computação reduzido em até 70%'));
+  if (oldPromise) oldPromise.textContent = 'Cada linha escrita com propósito. Código simples de entender, testar e continuar quando o projeto ganhar novos passos.';
+
+  // Organic motion layer
+  (() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = window.matchMedia('(pointer: fine)').matches;
+    const style = document.createElement('style');
+    style.textContent = `
+      .vita-reveal { opacity: 0; transform: translateY(18px); transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.8,.2,1); }
+      .vita-reveal.is-visible { opacity: 1; transform: translateY(0); }
+      .vita-glow { position: relative; overflow: hidden; }
+      .vita-glow::after { content: ''; position: absolute; inset: -30%; pointer-events: none; opacity: 0; background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(78,222,163,.14), transparent 28%); transition: opacity 300ms ease; }
+      .vita-glow:hover::after { opacity: 1; }
+      @media (max-width: 640px) { footer .flex.items-center.gap-space-md { width: 100%; max-width: 100%; flex-wrap: wrap; justify-content: center; gap: .75rem; } }
+      @media (prefers-reduced-motion: reduce) { .vita-reveal { opacity: 1; transform: none; transition: none; } .vita-glow::after { display: none; } }
+    `;
+    document.head.appendChild(style);
+
+    const revealTargets = document.querySelectorAll('main > section, main section .group, main section blockquote');
+    revealTargets.forEach((element, index) => {
+      element.classList.add('vita-reveal');
+      element.style.transitionDelay = `${Math.min(index * 35, 280)}ms`;
+    });
+
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      revealTargets.forEach(element => element.classList.add('is-visible'));
+    } else {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealTargets.forEach(element => revealObserver.observe(element));
+    }
+
+    document.querySelectorAll('main section .group, main section form, main section > div.rounded-lg').forEach(element => {
+      element.classList.add('vita-glow');
+      if (finePointer && !reducedMotion) {
+        element.addEventListener('pointermove', event => {
+          const bounds = element.getBoundingClientRect();
+          element.style.setProperty('--glow-x', `${((event.clientX - bounds.left) / bounds.width) * 100}%`);
+          element.style.setProperty('--glow-y', `${((event.clientY - bounds.top) / bounds.height) * 100}%`);
+        }, { passive: true });
+      }
+    });
+
+    const hero = document.querySelector('main > section:first-child');
+    if (hero && finePointer && !reducedMotion) {
+      hero.addEventListener('pointermove', event => {
+        const bounds = hero.getBoundingClientRect();
+        hero.style.setProperty('--hero-x', `${((event.clientX - bounds.left) / bounds.width - 0.5) * 12}px`);
+        hero.style.setProperty('--hero-y', `${((event.clientY - bounds.top) / bounds.height - 0.5) * 8}px`);
+      }, { passive: true });
+      hero.style.setProperty('background', 'radial-gradient(circle at calc(50% + var(--hero-x, 0px)) calc(22% + var(--hero-y, 0px)), rgba(78,222,163,.08), transparent 34%), transparent');
+    }
+
+    const addSignature = () => {
+      const footer = document.querySelector('footer');
+      const footerLinks = footer?.querySelector('.flex.items-center.gap-space-md');
+      if (footerLinks) {
+        footer.querySelectorAll('a[data-path]').forEach(link => link.remove());
+        const githubLink = document.createElement('a');
+        githubLink.className = 'hover:text-primary transition-colors';
+        githubLink.href = 'https://github.com/2e-solutions';
+        githubLink.target = '_blank';
+        githubLink.rel = 'noopener noreferrer';
+        githubLink.textContent = 'github.com/2e-solutions';
+        footerLinks.prepend(githubLink);
+      }
+      const footerBrand = footer ? [...footer.querySelectorAll('span')].find(element => element.textContent.trim() === 'VITA Solutions') : null;
+      if (footerBrand) footerBrand.textContent = '2E Solutions';
+      const footerDescription = footer ? [...footer.querySelectorAll('p')].find(element => element.textContent.includes('Engenharia de software biomimética')) : null;
+      if (footerDescription) footerDescription.textContent = 'Sites, bots, automações e pequenos sistemas construídos com cuidado para pessoas e negócios reais pela 2E Solutions.';
+      const footerYear = footer ? [...footer.querySelectorAll('span')].find(element => element.textContent.includes('© 2025')) : null;
+      if (footerYear) footerYear.textContent = '© 2026 2E Solutions. Todos os direitos reservados.';
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addSignature, { once: true });
+    else addSignature();
+  })();
+
+  function openCalendlyMock() {
+    const contact = document.getElementById('contato');
+    if (contact) {
+      contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const firstField = contact.querySelector('input, textarea, select');
+      if (firstField) window.setTimeout(() => firstField.focus({ preventScroll: true }), 550);
+      return;
+    }
+    alert('Redirecionando para a agenda direta de Artur para os próximos 20 minutos disponíveis.');
+  }
+</script></main><footer class="w-full bg-surface-container-lowest mt-space-4xl"><div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-3xl flex flex-col gap-space-2xl"><div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg"><div class="flex flex-col gap-space-2xs"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface">VITA Solutions</span><span class="font-label-micro text-label-micro px-space-xs py-space-3xs rounded-full bg-surface-container-high text-primary">v2.8.4-bio</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Engenharia de software biomimética, arquitetura distribuída de alta resiliência e computação de alta performance por Artur.</p></div><div class="flex flex-wrap items-center gap-space-sm font-label-code text-label-code text-on-surface-variant"><div class="flex items-center gap-space-2xs px-space-sm py-space-xs rounded-full bg-surface-container-low"><span class="h-2 w-2 rounded-full bg-primary"></span><span class="">Nodes: 99.98% Healthy</span></div><div class="flex items-center gap-space-2xs px-space-sm py-space-xs rounded-full bg-surface-container-low"><span class="">Edge Latency: 12ms</span></div></div></div><div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xl text-on-surface-variant"><span class="font-body-sm text-body-sm">© 2025 VITA Solutions • Artur Creative Tech Architect. Todos os direitos reservados.</span><div class="flex items-center gap-space-md font-label-code text-label-code"><a class="hover:text-primary transition-colors" data-path="playground-interativo" href="#">github.sys/vita</a><a class="hover:text-primary transition-colors" data-path="contato" href="#">linkedin.bio/artur</a><a class="hover:text-primary transition-colors" data-path="arquitetura" href="#">telemetry.vita.run</a></div></div></div></footer>
+
+</body></html>
