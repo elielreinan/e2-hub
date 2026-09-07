@@ -702,7 +702,7 @@
       .vita-hero-space { display: inline-block; width: .28em; }
       @keyframes vita-title-in { from { opacity: 0; transform: translateY(14px); filter: blur(5px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
       @keyframes vita-letter-bounce { 0%, 62%, 100% { transform: translateY(0) rotate(0); } 68% { transform: translateY(-7px) rotate(-2deg); } 74% { transform: translateY(1px) rotate(1deg); } 80% { transform: translateY(-2px) rotate(0); } }
-      @media (max-width: 640px) { footer .flex.items-center.gap-space-md { width: 100%; max-width: 100%; flex-wrap: wrap; justify-content: center; gap: .75rem; } }
+      @media (max-width: 640px) { .vita-hero-title { font-size: 34px; line-height: 1.12; } footer .flex.items-center.gap-space-md { width: 100%; max-width: 100%; flex-wrap: wrap; justify-content: center; gap: .75rem; } }
       @media (prefers-reduced-motion: reduce) { .vita-reveal { opacity: 1; transform: none; transition: none; } .vita-glow::after { display: none; } .vita-hero-title, .vita-hero-letter { animation: none; } }
     `;
     document.head.appendChild(style);
