@@ -568,7 +568,7 @@
 
   // Interactive Estimator Engine
   let currentChallenge = 'mvp';
-
+  
   const estimatorPresets = {
     mvp: {
       1: {
@@ -676,7 +676,7 @@
   if (throughputMetric) throughputMetric.textContent = '1';
   const throughputLabel = [...document.querySelectorAll('span')].find(element => element.textContent.trim() === 'req/s');
   if (throughputLabel) throughputLabel.textContent = 'ideia por vez';
-  const experienceLabel = [...document.querySelectorAll('div')].find(element => element.textContent.includes('12+ Anos Experiência') && element.querySelector('br') && element.children.length === 1);
+  const experienceLabel = document.querySelector('.font-label-code.text-label-micro.text-on-surface-variant.text-right');
   if (experienceLabel) experienceLabel.innerHTML = 'Começando agora<br>Com atenção aos detalhes';
   const oldPromise = [...document.querySelectorAll('p')].find(element => element.textContent.includes('Custo de computação reduzido em até 70%'));
   if (oldPromise) oldPromise.textContent = 'Cada linha escrita com propósito. Código simples de entender, testar e continuar quando o projeto ganhar novos passos.';
@@ -696,6 +696,7 @@
       .vita-nav-link::after { content: ''; position: absolute; left: 50%; bottom: 2px; width: 0; height: 2px; border-radius: 999px; background: #4edea3; transform: translateX(-50%); transition: width 250ms ease; }
       .vita-nav-link:hover, .vita-nav-link.is-active { color: #e0e2ea; background: rgba(78,222,163,.1); transform: translateY(-1px); }
       .vita-nav-link.is-active::after { width: 18px; }
+      .challenge-pill { border-radius: 1.25rem; }
       .vita-hero-title { animation: vita-title-in 900ms cubic-bezier(.2,.8,.2,1) both; }
       @keyframes vita-title-in { from { opacity: 0; transform: translateY(14px); filter: blur(5px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
       @media (max-width: 640px) { footer .flex.items-center.gap-space-md { width: 100%; max-width: 100%; flex-wrap: wrap; justify-content: center; gap: .75rem; } }
@@ -703,7 +704,7 @@
     `;
     document.head.appendChild(style);
 
-    const architectureSection = document.querySelectorAll('main > section')[2];
+    const architectureSection = document.querySelectorAll('main section')[2];
     if (architectureSection) architectureSection.id = 'arquitetura';
     const navLinks = document.querySelectorAll('header nav a[data-path]');
     const navTargets = { solucoes: '#solucoes', arquitetura: '#arquitetura', 'casos-reais': '#casos-reais', 'playground-interativo': '#solucoes', contato: '#contato' };
