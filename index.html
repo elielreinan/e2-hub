@@ -643,6 +643,82 @@
     }, 600);
   }
 
+  (() => {
+    const header = document.querySelector('header');
+    const desktopNav = header?.querySelector('nav');
+    const headerShell = header?.firstElementChild;
+    const logo = header?.querySelector('img');
+    if (!header || !desktopNav || !headerShell || !logo) return;
+
+    logo.src = '2E-logo-nobackground.png';
+    logo.alt = '2E Solutions';
+    logo.classList.add('site-logo');
+    logo.closest('a')?.querySelector('.flex.flex-col')?.remove();
+
+    const addFooterLogo = () => {
+      const footerBrand = document.querySelector('footer span');
+      if (!footerBrand || footerBrand.closest('.footer-brand-logo')) return;
+      const footerLogo = document.createElement('img');
+      footerLogo.src = '2E-logo-nobackground.png';
+      footerLogo.alt = '2E Solutions';
+      footerLogo.className = 'footer-logo';
+      footerBrand.replaceWith(footerLogo);
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addFooterLogo, { once: true });
+    else addFooterLogo();
+
+    const menuButton = document.createElement('button');
+    menuButton.className = 'mobile-menu-toggle';
+    menuButton.type = 'button';
+    menuButton.setAttribute('aria-expanded', 'false');
+    menuButton.setAttribute('aria-controls', 'mobile-navigation');
+    menuButton.setAttribute('aria-label', 'Abrir menu');
+    menuButton.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">menu</span>';
+
+    const mobileNav = document.createElement('nav');
+    mobileNav.id = 'mobile-navigation';
+    mobileNav.className = 'mobile-nav-panel';
+    mobileNav.setAttribute('aria-label', 'Navegação principal');
+    desktopNav.querySelectorAll('a[data-path]').forEach((link) => {
+      const mobileLink = link.cloneNode(true);
+      mobileLink.classList.remove('vita-nav-link');
+      mobileLink.addEventListener('click', () => setMenuState(false));
+      mobileNav.appendChild(mobileLink);
+    });
+
+    const setMenuState = (isOpen) => {
+      mobileNav.classList.toggle('is-open', isOpen);
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+      menuButton.querySelector('.material-symbols-outlined').textContent = isOpen ? 'close' : 'menu';
+    };
+
+    menuButton.addEventListener('click', () => {
+      setMenuState(menuButton.getAttribute('aria-expanded') !== 'true');
+    });
+    headerShell.append(menuButton, mobileNav);
+
+    const style = document.createElement('style');
+    style.textContent = `
+      .site-logo { width: 4rem; height: 2.75rem; object-fit: cover; }
+      .footer-logo { width: 5.5rem; height: 3rem; object-fit: cover; }
+      .mobile-menu-toggle, .mobile-nav-panel { display: none; }
+      @media (max-width: 1023px) {
+        .mobile-menu-toggle { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border: 0; border-radius: 999px; color: #e0e2ea; background: rgba(255,255,255,.06); cursor: pointer; }
+        .mobile-menu-toggle:hover, .mobile-menu-toggle:focus-visible { color: #4edea3; background: rgba(78,222,163,.12); outline: none; }
+        .mobile-nav-panel { position: absolute; top: calc(100% + .5rem); left: 0; right: 0; flex-direction: column; gap: .25rem; padding: .75rem; border: 1px solid rgba(255,255,255,.08); border-radius: 1.25rem; background: rgba(24,28,33,.96); box-shadow: 0 1rem 3rem rgba(0,0,0,.28); backdrop-filter: blur(1.5rem); }
+        .mobile-nav-panel.is-open { display: flex; }
+        .mobile-nav-panel a { display: block; padding: .8rem 1rem; border-radius: .75rem; color: #bbcabf; font: 600 .7rem/1rem 'JetBrains Mono', monospace; letter-spacing: .06em; text-transform: uppercase; }
+        .mobile-nav-panel a:hover, .mobile-nav-panel a:focus-visible { color: #e0e2ea; background: rgba(78,222,163,.1); outline: none; }
+      }
+    `;
+    document.head.appendChild(style);
+  })();
+
+  const authorMeta = document.createElement('meta');
+  authorMeta.name = 'author';
+  authorMeta.content = 'ProdByE²';
+  document.head.appendChild(authorMeta);
   document.title = '2E Solutions';
   const header = document.querySelector('header');
   header?.querySelector('a[data-path="contato"].bg-primary-container')?.remove();
@@ -779,6 +855,13 @@
         githubLink.rel = 'noopener noreferrer';
         githubLink.textContent = 'github.com/2e-solutions';
         footerLinks.prepend(githubLink);
+        const brandLink = document.createElement('a');
+        brandLink.className = 'hover:text-primary transition-colors';
+        brandLink.href = 'https://e2dev.me';
+        brandLink.target = '_blank';
+        brandLink.rel = 'noreferrer';
+        brandLink.textContent = 'ProdByE²';
+        footerLinks.appendChild(brandLink);
       }
       const footerBrand = footer ? [...footer.querySelectorAll('span')].find(element => element.textContent.trim() === 'VITA Solutions') : null;
       if (footerBrand) footerBrand.textContent = '2E Solutions';

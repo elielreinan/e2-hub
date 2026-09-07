@@ -1,43 +1,37 @@
-# Dependencies
+# Dependencias
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Build outputs
+# Saidas de build
 dist/
 build/
 *.local
 
-# IDE/Editor
+# IDE e editor
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# OS
+# Sistema operacional
 .DS_Store
 Thumbs.db
 
-# Logs
+# Logs e cache
 logs/
 *.log
-
-# Environment
-.env
-.env.local
-.env.*.local
-
-# Cache
 .cache/
 .parcel-cache/
 .eslintcache
-
-# Test coverage
 coverage/
 
-# Misc
+# Ambiente e certificados
+.env
+.env.local
+.env.*.local
 *.pem
 *.key
 *.crt
