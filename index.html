@@ -17,7 +17,7 @@
 </div>
 <!-- Headline & Subtitle -->
 <h1 class="font-display-hero text-display-hero-mobile lg:text-display-hero text-on-surface tracking-tight leading-[1.08]">
-          Sites úteis, automações honestas e pequenos sistemas que <span class="text-primary underline decoration-primary/40 underline-offset-8">tiram ideias do papel</span>.
+          Sites úteis, automações honestas e pequenos sistemas que <span class="vita-hero-highlight text-primary underline decoration-primary/40 underline-offset-8">tiram ideias do papel</span>.
         </h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
           Sou dev independente e gosto de transformar problemas do dia a dia em soluções simples: páginas bem cuidadas, bots, integrações e ferramentas sob medida para pequenos negócios e projetos pessoais.
@@ -698,9 +698,11 @@
       .vita-nav-link.is-active::after { width: 18px; }
       .challenge-pill { border-radius: 1.25rem; }
       .vita-hero-title { animation: vita-title-in 900ms cubic-bezier(.2,.8,.2,1) both; }
+      .vita-hero-highlight { display: inline-block; animation: vita-highlight-bounce 3.2s ease-in-out infinite; transform-origin: center bottom; }
       @keyframes vita-title-in { from { opacity: 0; transform: translateY(14px); filter: blur(5px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+      @keyframes vita-highlight-bounce { 0%, 64%, 100% { transform: translateY(0) rotate(0); } 70% { transform: translateY(-5px) rotate(-1deg); } 76% { transform: translateY(1px) rotate(.5deg); } 82% { transform: translateY(-2px) rotate(0); } }
       @media (max-width: 640px) { footer .flex.items-center.gap-space-md { width: 100%; max-width: 100%; flex-wrap: wrap; justify-content: center; gap: .75rem; } }
-      @media (prefers-reduced-motion: reduce) { .vita-reveal { opacity: 1; transform: none; transition: none; } .vita-glow::after { display: none; } .vita-hero-title { animation: none; } }
+      @media (prefers-reduced-motion: reduce) { .vita-reveal { opacity: 1; transform: none; transition: none; } .vita-glow::after { display: none; } .vita-hero-title, .vita-hero-highlight { animation: none; } }
     `;
     document.head.appendChild(style);
 
