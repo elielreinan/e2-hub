@@ -655,6 +655,18 @@
   if (availabilityLabel) availabilityLabel.textContent = 'sites • bots • automações';
   const heroTitle = document.querySelector('h1');
   if (heroTitle) heroTitle.classList.add('vita-hero-title');
+  const heroHighlight = document.querySelector('.vita-hero-highlight');
+  if (heroHighlight) {
+    const highlightText = heroHighlight.textContent;
+    heroHighlight.textContent = '';
+    [...highlightText].forEach((character, index) => {
+      const letter = document.createElement('span');
+      letter.className = character === ' ' ? 'vita-hero-space' : 'vita-hero-letter';
+      letter.textContent = character === ' ' ? '\u00a0' : character;
+      if (character !== ' ') letter.style.setProperty('--letter-index', index);
+      heroHighlight.appendChild(letter);
+    });
+  }
   const footerBrand = [...document.querySelectorAll('span')].find(element => element.textContent.trim() === 'VITA Solutions');
   if (footerBrand) footerBrand.textContent = '2E Solutions';
   const footerDescription = [...document.querySelectorAll('p')].find(element => element.textContent.includes('Engenharia de software biomimética'));
@@ -685,11 +697,13 @@
       .vita-nav-link.is-active::after { width: 18px; }
       .challenge-pill { border-radius: 1.25rem; }
       .vita-hero-title { animation: vita-title-in 900ms cubic-bezier(.2,.8,.2,1) both; }
-      .vita-hero-highlight { display: inline-block; animation: vita-highlight-bounce 3.2s ease-in-out infinite; transform-origin: center bottom; }
+      .vita-hero-highlight { display: inline-block; }
+      .vita-hero-letter { display: inline-block; animation: vita-letter-bounce 3.2s ease-in-out infinite; animation-delay: calc(var(--letter-index) * 70ms); transform-origin: center bottom; }
+      .vita-hero-space { display: inline-block; width: .28em; }
       @keyframes vita-title-in { from { opacity: 0; transform: translateY(14px); filter: blur(5px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
-      @keyframes vita-highlight-bounce { 0%, 64%, 100% { transform: translateY(0) rotate(0); } 70% { transform: translateY(-5px) rotate(-1deg); } 76% { transform: translateY(1px) rotate(.5deg); } 82% { transform: translateY(-2px) rotate(0); } }
+      @keyframes vita-letter-bounce { 0%, 62%, 100% { transform: translateY(0) rotate(0); } 68% { transform: translateY(-7px) rotate(-2deg); } 74% { transform: translateY(1px) rotate(1deg); } 80% { transform: translateY(-2px) rotate(0); } }
       @media (max-width: 640px) { footer .flex.items-center.gap-space-md { width: 100%; max-width: 100%; flex-wrap: wrap; justify-content: center; gap: .75rem; } }
-      @media (prefers-reduced-motion: reduce) { .vita-reveal { opacity: 1; transform: none; transition: none; } .vita-glow::after { display: none; } .vita-hero-title, .vita-hero-highlight { animation: none; } }
+      @media (prefers-reduced-motion: reduce) { .vita-reveal { opacity: 1; transform: none; transition: none; } .vita-glow::after { display: none; } .vita-hero-title, .vita-hero-letter { animation: none; } }
     `;
     document.head.appendChild(style);
 
