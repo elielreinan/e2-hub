@@ -492,17 +492,17 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
 <div class="space-y-space-3xs">
 <label class="font-label-micro text-label-micro text-on-surface-variant uppercase font-semibold" for="client-name">Seu Nome *</label>
-<input class="w-full px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="client-name" placeholder="Ex: Lucas Mendes" required="" type="text">
+<input class="w-full px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="client-name" placeholder="xxxxxxx" required="" type="text">
 </div>
 <div class="space-y-space-3xs">
 <label class="font-label-micro text-label-micro text-on-surface-variant uppercase font-semibold" for="client-email">E-mail Profissional *</label>
-<input class="w-full px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="client-email" placeholder="lucas@empresa.com" required="" type="email">
+<input class="w-full px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="client-email" placeholder="xxxxxxx" required="" type="email">
 </div>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
 <div class="space-y-space-3xs">
 <label class="font-label-micro text-label-micro text-on-surface-variant uppercase font-semibold" for="client-company">Empresa / Produto</label>
-<input class="w-full px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="client-company" placeholder="Ex: NexusPay Corp" type="text">
+<input class="w-full px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="client-company" placeholder="xxxxxxx" type="text">
 </div>
 <div class="space-y-space-3xs">
 <label class="font-label-micro text-label-micro text-on-surface-variant uppercase font-semibold" for="client-budget">Tamanho imaginado</label>
@@ -516,7 +516,7 @@
 </div>
 <div class="space-y-space-3xs">
 <label class="font-label-micro text-label-micro text-on-surface-variant uppercase font-semibold" for="client-message">O que você quer criar ou melhorar? *</label>
-<textarea class="w-full px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary resize-none shadow-sm" id="client-message" placeholder="Pode explicar do seu jeito: qual tarefa, ideia ou problema você quer resolver?" required="" rows="4"></textarea>
+<textarea class="w-full px-space-md py-space-sm rounded-DEFAULT bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary resize-none shadow-sm" id="client-message" placeholder="xxxxxxx" required="" rows="4"></textarea>
 </div>
 <div class="pt-space-xs">
 <button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-space-sm rounded-full bg-primary-container text-on-primary-container font-headline-sm text-body-md hover:scale-[1.02] transition-all shadow-[0_0_24px_rgba(16,185,129,0.25)]" id="submit-btn" type="submit">
@@ -703,14 +703,16 @@
       .site-logo { width: 4rem; height: 2.75rem; object-fit: cover; }
       .footer-logo { width: 5.5rem; height: 3rem; object-fit: cover; }
       #contact-form label { display: block; color: #bbcabf; font-family: Inter, sans-serif; font-size: .75rem; font-weight: 600; line-height: 1.125rem; letter-spacing: .02em; }
-      #contact-form input, #contact-form select, #contact-form textarea { color: #e0e2ea; font-family: Inter, sans-serif; font-size: .9375rem; line-height: 1.5rem; }
+      #contact-form input, #contact-form select, #contact-form textarea { color: #e0e2ea; font-family: Inter, sans-serif; font-size: .9375rem; line-height: 1.5rem; border: 1px solid rgba(134,148,138,.35); }
       #contact-form input::placeholder, #contact-form textarea::placeholder { color: #86948a; opacity: 1; }
       #contact-form select option { color: #e0e2ea; background: #181c21; }
       #contact-form, #contact-form input, #contact-form select, #contact-form textarea { min-width: 0; max-width: 100%; box-sizing: border-box; }
       #contact-form input, #contact-form select, #contact-form textarea { overflow: hidden; }
       #contact-form + * { min-width: 0; }
       .mobile-menu-toggle, .mobile-nav-panel { display: none; }
+      header nav { margin-left: auto; margin-right: -.5rem; }
       @media (max-width: 1023px) {
+        header nav { margin-right: 0; }
         .mobile-menu-toggle { display: inline-flex; align-items: center; justify-content: center; width: 2.75rem; height: 2.75rem; border: 0; border-radius: 999px; color: #e0e2ea; background: rgba(255,255,255,.06); cursor: pointer; }
         .mobile-menu-toggle:hover, .mobile-menu-toggle:focus-visible { color: #4edea3; background: rgba(78,222,163,.12); outline: none; }
         .mobile-nav-panel { position: absolute; top: calc(100% + .5rem); left: 0; right: 0; flex-direction: column; gap: .25rem; padding: .75rem; border: 1px solid rgba(255,255,255,.08); border-radius: 1.25rem; background: rgba(24,28,33,.96); box-shadow: 0 1rem 3rem rgba(0,0,0,.28); backdrop-filter: blur(1.5rem); }
@@ -724,7 +726,7 @@
 
   const authorMeta = document.createElement('meta');
   authorMeta.name = 'author';
-  authorMeta.content = 'ProdByE²';
+  authorMeta.content = '2E Solutions';
   document.head.appendChild(authorMeta);
   document.title = '2E Solutions';
   const header = document.querySelector('header');
@@ -774,7 +776,7 @@
       .vita-glow { position: relative; overflow: hidden; }
       .vita-glow::after { content: ''; position: absolute; inset: -30%; pointer-events: none; opacity: 0; background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(78,222,163,.14), transparent 28%); transition: opacity 300ms ease; }
       .vita-glow:hover::after { opacity: 1; }
-      .vita-nav-link { position: relative; transition: color 250ms ease, background-color 250ms ease, transform 250ms ease; }
+      .vita-nav-link { position: relative; padding: .55rem .75rem; border-radius: 999px; transition: color 250ms ease, background-color 250ms ease, transform 250ms ease; }
       .vita-nav-link::after { content: ''; position: absolute; left: 50%; bottom: 2px; width: 0; height: 2px; border-radius: 999px; background: #4edea3; transform: translateX(-50%); transition: width 250ms ease; }
       .vita-nav-link:hover, .vita-nav-link.is-active { color: #e0e2ea; background: rgba(78,222,163,.1); transform: translateY(-1px); }
       .vita-nav-link.is-active::after { width: 18px; }
@@ -794,11 +796,14 @@
     if (architectureSection) architectureSection.id = 'arquitetura';
     const navLinks = document.querySelectorAll('header nav a[data-path]');
     const navTargets = { solucoes: '#solucoes', arquitetura: '#arquitetura', 'casos-reais': '#casos-reais', 'playground-interativo': '#solucoes', contato: '#contato' };
+    const allowedRoutes = new Set(Object.values(navTargets));
     navLinks.forEach(link => {
       const target = navTargets[link.dataset.path];
       link.classList.add('vita-nav-link');
       if (target) link.href = target;
+      else link.addEventListener('click', event => event.preventDefault());
       link.addEventListener('click', () => {
+        if (!allowedRoutes.has(link.getAttribute('href'))) return;
         navLinks.forEach(item => {
           item.classList.remove('is-active');
           item.removeAttribute('aria-current');
@@ -862,13 +867,6 @@
         githubLink.rel = 'noopener noreferrer';
         githubLink.textContent = 'github.com/2e-solutions';
         footerLinks.prepend(githubLink);
-        const brandLink = document.createElement('a');
-        brandLink.className = 'hover:text-primary transition-colors';
-        brandLink.href = 'https://e2dev.me';
-        brandLink.target = '_blank';
-        brandLink.rel = 'noreferrer';
-        brandLink.textContent = 'ProdByE²';
-        footerLinks.appendChild(brandLink);
       }
       const footerBrand = footer ? [...footer.querySelectorAll('span')].find(element => element.textContent.trim() === 'VITA Solutions') : null;
       if (footerBrand) footerBrand.textContent = '2E Solutions';
