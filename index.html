@@ -656,13 +656,18 @@
     }, 600);
   }
 
-  document.title = 'Eli Dev — Sites, Bots e Automações';
+  document.title = '2E Solutions';
+  const header = document.querySelector('header');
+  header?.querySelector('a[data-path="contato"].bg-primary-container')?.remove();
+  header?.querySelector('img[alt="Profile"]')?.parentElement.remove();
   const brandMark = [...document.querySelectorAll('header span')].find(element => element.textContent.trim() === 'VITA');
   if (brandMark) brandMark.textContent = '2E';
   const brandDescriptor = [...document.querySelectorAll('header span')].find(element => element.textContent.includes('Artur') || element.textContent.includes('Solutions'));
   if (brandDescriptor) brandDescriptor.textContent = 'Solutions';
   const availabilityLabel = [...document.querySelectorAll('header span')].find(element => element.textContent.includes('Q2') || element.textContent.includes('DisponÃ'));
   if (availabilityLabel) availabilityLabel.textContent = 'sites • bots • automações';
+  const heroTitle = document.querySelector('h1');
+  if (heroTitle) heroTitle.classList.add('vita-hero-title');
   const footerBrand = [...document.querySelectorAll('span')].find(element => element.textContent.trim() === 'VITA Solutions');
   if (footerBrand) footerBrand.textContent = '2E Solutions';
   const footerDescription = [...document.querySelectorAll('p')].find(element => element.textContent.includes('Engenharia de software biomimética'));
@@ -687,10 +692,35 @@
       .vita-glow { position: relative; overflow: hidden; }
       .vita-glow::after { content: ''; position: absolute; inset: -30%; pointer-events: none; opacity: 0; background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(78,222,163,.14), transparent 28%); transition: opacity 300ms ease; }
       .vita-glow:hover::after { opacity: 1; }
+      .vita-nav-link { position: relative; transition: color 250ms ease, background-color 250ms ease, transform 250ms ease; }
+      .vita-nav-link::after { content: ''; position: absolute; left: 50%; bottom: 2px; width: 0; height: 2px; border-radius: 999px; background: #4edea3; transform: translateX(-50%); transition: width 250ms ease; }
+      .vita-nav-link:hover, .vita-nav-link.is-active { color: #e0e2ea; background: rgba(78,222,163,.1); transform: translateY(-1px); }
+      .vita-nav-link.is-active::after { width: 18px; }
+      .vita-hero-title { animation: vita-title-in 900ms cubic-bezier(.2,.8,.2,1) both; }
+      @keyframes vita-title-in { from { opacity: 0; transform: translateY(14px); filter: blur(5px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
       @media (max-width: 640px) { footer .flex.items-center.gap-space-md { width: 100%; max-width: 100%; flex-wrap: wrap; justify-content: center; gap: .75rem; } }
-      @media (prefers-reduced-motion: reduce) { .vita-reveal { opacity: 1; transform: none; transition: none; } .vita-glow::after { display: none; } }
+      @media (prefers-reduced-motion: reduce) { .vita-reveal { opacity: 1; transform: none; transition: none; } .vita-glow::after { display: none; } .vita-hero-title { animation: none; } }
     `;
     document.head.appendChild(style);
+
+    const architectureSection = document.querySelectorAll('main > section')[2];
+    if (architectureSection) architectureSection.id = 'arquitetura';
+    const navLinks = document.querySelectorAll('header nav a[data-path]');
+    const navTargets = { solucoes: '#solucoes', arquitetura: '#arquitetura', 'casos-reais': '#casos-reais', 'playground-interativo': '#solucoes', contato: '#contato' };
+    navLinks.forEach(link => {
+      const target = navTargets[link.dataset.path];
+      link.classList.add('vita-nav-link');
+      if (target) link.href = target;
+      link.addEventListener('click', () => {
+        navLinks.forEach(item => {
+          item.classList.remove('is-active');
+          item.removeAttribute('aria-current');
+        });
+        link.classList.add('is-active');
+        link.setAttribute('aria-current', 'page');
+      });
+    });
+    navLinks[0]?.classList.add('is-active');
 
     const revealTargets = document.querySelectorAll('main > section, main section .group, main section blockquote');
     revealTargets.forEach((element, index) => {
