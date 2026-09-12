@@ -79,7 +79,7 @@
     .taskbar { position:fixed; z-index:30; right:0; bottom:0; left:0; display:flex; align-items:center; gap:5px; height:38px; padding:3px 5px; background:var(--window); border-top:2px solid var(--light); box-shadow:0 -1px var(--shadow); }
     .start-button { display:flex; align-items:center; gap:5px; height:30px; padding:3px 8px; font-weight:bold; }
     .start-button .flag { display:inline-block; width:18px; height:18px; background:url("win95-winxp_icons-master/icons/w2k_start.ico") center/contain no-repeat; }
-    .task-button { display:block; max-width:260px; height:29px; padding:3px 12px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; text-align:left; }
+    .task-button { display:inline-flex; align-items:center; justify-content:center; gap:5px; max-width:260px; height:29px; padding:3px 12px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; text-align:center; }
     .clock { margin-left:auto; padding:7px 10px; border:2px solid; border-color:var(--shadow) var(--light) var(--light) var(--shadow); font-size:12px; }
     .mobile-hint { display:none; color:#fff; text-align:center; text-shadow:1px 1px #000; }
     .window.about { top:84px; left:auto; right:9vw; width:min(440px,calc(100vw - 36px)); }
@@ -96,7 +96,7 @@
       .hero-grid,.project-list,.gallery-grid { grid-template-columns:1fr; gap:14px; }
       .stamp { min-height:126px; }
       .mobile-hint { display:block; margin:8px 20px 0; font-size:12px; }
-      .task-button { display:block; max-width:180px; }
+      .task-button { display:inline-flex; max-width:180px; }
     }
   </style>
 </head>
