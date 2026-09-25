@@ -1,0 +1,24 @@
+<svg width="420" height="220" viewBox="0 0 420 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">2E.dev</title>
+  <desc id="desc">Logo 2E.dev em estilo de display digital de sete segmentos.</desc>
+  <defs>
+    <filter id="glow" x="-30%" y="-40%" width="160%" height="180%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g filter="url(#glow)" fill="#F7F7FF">
+    <!-- 2 -->
+    <path d="M24 20L38 7H170L184 20L170 34H42L28 34L24 20Z"/>
+    <path d="M174 29L188 43V92L174 106L160 92V47L174 29Z"/>
+    <path d="M24 110L38 96H170L184 110L170 124H42L28 124L24 110Z"/>
+    <path d="M28 116L42 130V174L28 188L14 174V131L28 116Z"/>
+    <path d="M24 196L38 182H170L184 196L170 210H42L28 210L24 196Z"/>
+    <!-- E -->
+    <path d="M224 20L238 7H370L384 20L370 34H242L228 34L224 20Z"/>
+    <path d="M228 102L242 88H350L364 102L350 116H242L228 116L228 102Z"/>
+    <path d="M224 196L238 182H370L384 196L370 210H242L228 210L224 196Z"/>
+    <path d="M224 29L238 43V92L224 106L210 92V43L224 29Z"/>
+    <path d="M224 116L238 130V174L224 188L210 174V130L224 116Z"/>
+  </g>
+</svg>
