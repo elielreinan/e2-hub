@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="2E.dev — Desenvolvimento de software com foco em código organizado, arquitetura clara e entrega de valor. Soluções web, APIs, automação e aplicações.">
+  <meta name="theme-color" content="#050505">
+  <meta name="og:title" content="2E.dev — Desenvolvimento de Software">
+  <meta name="og:description" content="Software pensado para resolver problemas. Desenvolvemos aplicações web, APIs e soluções de automação com qualidade e propósito.">
+  <meta name="og:type" content="website">
+  <meta name="og:url" content="https://e2dev.me">
+  <meta name="og:site_name" content="2E.dev">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="2E.dev — Desenvolvimento de Software">
+  <meta name="twitter:description" content="Software pensado para resolver problemas.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "2E.dev",
+    "url": "https://e2dev.me",
+    "email": "meajuda.2edev@gmail.com",
+    "description": "Operação freelance focada em desenvolvimento de software com arquitetura clara e código organizado",
+    "sameAs": "https://github.com/elielreinan"
+  }
+  </script>
+  <title>2E.dev — Desenvolvimento de Software</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+    body {
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,.065), transparent 32%),
+        #050505;
+    }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+    }
+    .text-gradient {
+      background: linear-gradient(90deg, #fff, #8b8b8b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .segment-logo { filter: drop-shadow(0 0 8px rgba(255,255,255,.28)); }
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .mobile-menu.open { max-height: 500px; }
+    .stack-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgb(32, 32, 32);
+      background: rgb(13, 13, 13);
+      padding: 1.25rem 1.5rem;
+      min-width: 160px;
+      flex-shrink: 0;
+    }
+    .stack-track {
+      display: flex;
+      width: max-content;
+      animation: stack-scroll 28s linear infinite;
+    }
+    .stack-track:hover { animation-play-state: paused; }
+    @keyframes stack-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .project-card { transition: transform .25s ease, border-color .25s ease, background .25s ease; }
+    .project-card:hover { transform: translateY(-4px); }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#050505] text-gray-300 font-sans antialiased selection:bg-gray-700 selection:text-white">
+
+<header class="fixed inset-x-0 top-0 z-50 border-b border-gray-800/60 bg-[#050505]/80 backdrop-blur-xl">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+    <a href="#inicio" aria-label="2E.dev — início" class="flex items-center gap-3">
+      <img src="assets/logo.svg" alt="2E.dev" class="segment-logo h-9 w-16 object-contain">
+      <span class="text-sm font-semibold tracking-tight text-white"></span>
+    </a>
+    <nav aria-label="Navegação principal" class="hidden items-center gap-7 md:flex">
+      <a href="#sobre" class="text-sm text-gray-400 transition hover:text-white">Sobre</a>
+      <a href="#servicos" class="text-sm text-gray-400 transition hover:text-white">Serviços</a>
+      <a href="#stack" class="text-sm text-gray-400 transition hover:text-white">Stack</a>
+      <a href="#projetos" class="text-sm text-gray-400 transition hover:text-white">Projetos</a>
+      <a href="#contato" class="text-sm text-gray-400 transition hover:text-white">Contato</a>
+    </nav>
+    <a href="#contato" class="hidden rounded-md border border-gray-700 px-4 py-2 text-xs font-semibold text-white transition hover:border-gray-500 hover:bg-gray-900 sm:inline-flex">Solicitar projeto</a>
+    <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" class="md:hidden text-gray-400 hover:text-white">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+  </div>
+  <nav id="mobile-nav" class="mobile-menu border-t border-gray-800/60 md:hidden">
+    <div class="flex flex-col gap-1 px-6 py-4">
+      <a href="#sobre" class="rounded px-3 py-2 text-sm text-gray-400 transition hover:text-white hover:bg-gray-900">Sobre</a>
+      <a href="#servicos" class="rounded px-3 py-2 text-sm text-gray-400 transition hover:text-white hover:bg-gray-900">Serviços</a>
+      <a href="#stack" class="rounded px-3 py-2 text-sm text-gray-400 transition hover:text-white hover:bg-gray-900">Stack</a>
+      <a href="#projetos" class="rounded px-3 py-2 text-sm text-gray-400 transition hover:text-white hover:bg-gray-900">Projetos</a>
+      <a href="#contato" class="rounded px-3 py-2 text-sm text-gray-400 transition hover:text-white hover:bg-gray-900">Contato</a>
+      <a href="#contato" class="mt-2 rounded border border-gray-700 px-3 py-2 text-xs font-semibold text-white transition hover:border-gray-500 hover:bg-gray-900">Solicitar projeto</a>
+    </div>
+  </nav>
+</header>
+
+<main id="inicio">
+  <section class="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-6 pt-20">
+    <div class="grid-bg pointer-events-none absolute inset-0 -z-10"></div>
+    <div class="mx-auto max-w-5xl text-center">
+      <img src="assets/logo.svg" alt="Logo 2E.dev" class="segment-logo mx-auto mb-10 h-24 w-44 object-contain sm:h-28 sm:w-52">
+      <h1 class="text-5xl font-extrabold tracking-[-0.04em] text-white sm:text-6xl md:text-8xl">
+        Software pensado para <span class="text-gradient">resolver problemas.</span>
+      </h1>
+      <p class="mx-auto mt-7 max-w-2xl text-base leading-8 text-gray-400 sm:text-lg">
+        A 2E.dev desenvolve software e soluções digitais com foco em código organizado,
+        arquitetura clara, evolução contínua e entrega de valor.
+      </p>
+      <div class="mt-10 flex flex-wrap justify-center gap-3">
+        <a href="#projetos" class="rounded-md bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-gray-200">Ver projetos</a>
+        <a href="https://github.com/elielreinan" target="_blank" rel="noopener noreferrer" class="rounded-md border border-gray-700 px-6 py-3 text-sm font-semibold text-white transition hover:border-gray-500 hover:bg-gray-900">Ver GitHub</a>
+      </div>
+      <div class="mt-14 flex flex-wrap justify-center gap-x-8 gap-y-3 text-xs text-gray-500">
+        <span>Web</span><span>Aplicações</span><span>APIs</span><span>Automação</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="border-t border-gray-800/60 bg-[#0a0a0a] py-24">
+    <div class="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[1.2fr_.8fr] md:items-center">
+      <div>
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Sobre a 2E.dev</p>
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Desenvolvimento de software com propósito.</h2>
+        <div class="mt-6 space-y-5 text-sm leading-7 text-gray-400 sm:text-base">
+          <p>A 2E.dev é uma operação freelance dedicada ao desenvolvimento de software, criada para transformar ideias, necessidades e processos em soluções digitais.</p>
+          <p>O trabalho prioriza código limpo, organização, modularidade e uma base técnica preparada para manutenção e evolução.</p>
+          <p>Cada projeto é tratado de forma objetiva: entender o problema, definir a solução, construir o software e entregar uma aplicação que possa continuar crescendo.</p>
+        </div>
+      </div>
+      <aside class="rounded-2xl border border-gray-800 bg-gray-900/30 p-7">
+        <p class="mb-6 text-xs uppercase tracking-[0.2em] text-gray-600">Princípios</p>
+        <dl class="space-y-5">
+          <div class="flex justify-between gap-6 border-b border-gray-800 pb-4"><dt class="text-sm text-gray-500">Modelo</dt><dd class="text-sm font-medium text-white">Freelance</dd></div>
+          <div class="flex justify-between gap-6 border-b border-gray-800 pb-4"><dt class="text-sm text-gray-500">Foco</dt><dd class="text-sm font-medium text-white">Software</dd></div>
+          <div class="flex justify-between gap-6"><dt class="text-sm text-gray-500">Abordagem</dt><dd class="max-w-[12rem] text-right text-sm font-medium text-white">Modular e orientada à solução</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section id="servicos" class="border-t border-gray-800/60 py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mb-12"><p class="mb-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Serviços</p><h2 class="text-center text-3xl font-bold text-white sm:text-4xl">Soluções em software</h2></div>
+      <div class="grid gap-4 md:grid-cols-3">
+        <article class="rounded-xl border border-gray-800 bg-[#0a0a0a] p-6 transition hover:-translate-y-1 hover:border-gray-600"><span class="text-xs text-gray-600">01</span><h3 class="mt-5 font-semibold text-white">Desenvolvimento Web</h3><p class="mt-3 text-sm leading-6 text-gray-500">Criação de aplicações web responsivas, organizadas e preparadas para evolução.</p></article>
+        <article class="rounded-xl border border-gray-800 bg-[#0a0a0a] p-6 transition hover:-translate-y-1 hover:border-gray-600"><span class="text-xs text-gray-600">02</span><h3 class="mt-5 font-semibold text-white">APIs & Integrações</h3><p class="mt-3 text-sm leading-6 text-gray-500">Desenvolvimento de APIs e integrações para conectar sistemas e automatizar fluxos.</p></article>
+        <article class="rounded-xl border border-gray-800 bg-[#0a0a0a] p-6 transition hover:-translate-y-1 hover:border-gray-600"><span class="text-xs text-gray-600">03</span><h3 class="mt-5 font-semibold text-white">Automação</h3><p class="mt-3 text-sm leading-6 text-gray-500">Software para reduzir tarefas repetitivas, organizar processos e melhorar operações digitais.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" class="overflow-hidden border-y border-gray-800/60 bg-[#0a0a0a] py-20" aria-labelledby="stack-title">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mb-10 text-center">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Tecnologias</p>
+        <h2 id="stack-title" class="text-3xl font-bold text-white sm:text-4xl">Stack utilizada</h2>
+      </div>
+    </div>
+    <div class="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+      <div class="stack-track" aria-label="Carrossel de tecnologias">
+        <div class="flex items-center gap-4 px-2">
+          <div class="stack-item"><i class="devicon-java-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Java</span></div>
+          <div class="stack-item"><i class="devicon-python-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Python</span></div>
+          <div class="stack-item"><i class="devicon-mysql-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">SQL</span></div>
+          <div class="stack-item"><i class="devicon-react-original text-3xl"></i><span class="text-sm font-medium text-gray-300">React</span></div>
+          <div class="stack-item"><i class="devicon-vitejs-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Vite</span></div>
+          <div class="stack-item"><i class="devicon-css3-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">CSS</span></div>
+          <div class="stack-item"><i class="devicon-javascript-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">JavaScript</span></div>
+          <div class="stack-item"><i class="devicon-nodejs-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Node.js</span></div>
+        </div>
+        <div class="flex items-center gap-4 px-2" aria-hidden="true">
+          <div class="stack-item"><i class="devicon-java-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Java</span></div>
+          <div class="stack-item"><i class="devicon-python-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Python</span></div>
+          <div class="stack-item"><i class="devicon-mysql-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">SQL</span></div>
+          <div class="stack-item"><i class="devicon-react-original text-3xl"></i><span class="text-sm font-medium text-gray-300">React</span></div>
+          <div class="stack-item"><i class="devicon-vitejs-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Vite</span></div>
+          <div class="stack-item"><i class="devicon-css3-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">CSS</span></div>
+          <div class="stack-item"><i class="devicon-javascript-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">JavaScript</span></div>
+          <div class="stack-item"><i class="devicon-nodejs-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Node.js</span></div>
+        </div>
+      </div>
+    </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  </section>
+
+  <section id="projetos" class="border-t border-gray-800/60 bg-[#0c0c0c] py-24">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="mb-12">
+        <p class="mb-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Projetos</p>
+        <h2 class="text-center text-3xl font-bold text-white sm:text-4xl">Projetos em destaque</h2>
+        <p class="mx-auto mt-4 max-w-2xl text-center text-sm leading-7 text-gray-500">Uma seleção de software, plugins e experiências web desenvolvidas pela 2E.dev.</p>
+      </div>
+      <div class="grid gap-5 md:grid-cols-3">
+        <a href="https://github.com/elielreinan/omni-one" target="_blank" rel="noopener noreferrer" class="project-card group rounded-2xl border border-gray-800 bg-[#090909] p-7 hover:border-gray-600">
+          <div class="flex items-start justify-between"><span class="rounded-full border border-gray-800 px-3 py-1 text-[10px] uppercase tracking-widest text-gray-500">Plugin / Extensão</span><span class="text-gray-600 transition group-hover:text-white">↗</span></div>
+          <h3 class="mt-7 text-xl font-semibold text-white">OmniOne</h3>
+          <p class="mt-3 text-sm leading-6 text-gray-500">Plugin/extensão para o OmniRoute, desenvolvido para ampliar as possibilidades da plataforma.</p>
+          <span class="mt-7 inline-flex text-xs font-medium text-gray-400 group-hover:text-white">Ver repositório no GitHub</span>
+        </a>
+        <a href="https://github.com/elielreinan/notus-revit-plugin" target="_blank" rel="noopener noreferrer" class="project-card group rounded-2xl border border-gray-800 bg-[#090909] p-7 hover:border-gray-600">
+          <div class="flex items-start justify-between"><span class="rounded-full border border-gray-800 px-3 py-1 text-[10px] uppercase tracking-widest text-gray-500">Plugin Revit</span><span class="text-gray-600 transition group-hover:text-white">↗</span></div>
+          <h3 class="mt-7 text-xl font-semibold text-white">Notus RVT</h3>
+          <p class="mt-3 text-sm leading-6 text-gray-500">Plugin para Revit voltado ao cálculo HVAC, integrando recursos de software ao fluxo de projeto.</p>
+          <span class="mt-7 inline-flex text-xs font-medium text-gray-400 group-hover:text-white">Ver repositório no GitHub</span>
+        </a>
+        <a href="https://elielreinan.github.io/landing-page-branco/" target="_blank" rel="noopener noreferrer" class="project-card group rounded-2xl border border-gray-800 bg-[#090909] p-7 hover:border-gray-600">
+          <div class="flex items-start justify-between"><span class="rounded-full border border-gray-800 px-3 py-1 text-[10px] uppercase tracking-widest text-gray-500">Landing Page</span><span class="text-gray-600 transition group-hover:text-white">↗</span></div>
+          <h3 class="mt-7 text-xl font-semibold text-white">Branco Som</h3>
+          <p class="mt-3 text-sm leading-6 text-gray-500">Landing page desenvolvida para apresentar uma experiência web direta, responsiva e orientada à presença digital.</p>
+          <span class="mt-7 inline-flex text-xs font-medium text-gray-400 group-hover:text-white">Visitar projeto</span>
+        </a>
+      </div>
+      <div class="mt-10 text-center"><a href="https://github.com/elielreinan" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-white underline decoration-gray-700 underline-offset-4 hover:decoration-white">Explorar todos os projetos no GitHub</a></div>
+    </div>
+  </section>
+
+  <section id="contato" class="border-t border-gray-800/60 py-24">
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="text-center mb-12">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Contato</p>
+        <h2 class="text-3xl font-bold text-white sm:text-5xl">Vamos transformar uma ideia em software?</h2>
+        <p class="mx-auto mt-5 max-w-xl text-sm leading-7 text-gray-400 sm:text-base">Conte sobre o projeto, o problema que precisa ser resolvido e o resultado esperado.</p>
+      </div>
+      <form id="contact-form" class="rounded-2xl border border-gray-800 bg-[#0a0a0a] p-8 space-y-5">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Nome</label>
+          <input type="text" id="name" name="name" required class="w-full rounded-lg bg-[#0d0d0d] border border-gray-700 px-4 py-2 text-white placeholder-gray-500 focus:border-gray-500 focus:outline-none transition">
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+          <input type="email" id="email" name="email" required class="w-full rounded-lg bg-[#0d0d0d] border border-gray-700 px-4 py-2 text-white placeholder-gray-500 focus:border-gray-500 focus:outline-none transition">
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Mensagem</label>
+          <textarea id="message" name="message" rows="5" required class="w-full rounded-lg bg-[#0d0d0d] border border-gray-700 px-4 py-2 text-white placeholder-gray-500 focus:border-gray-500 focus:outline-none transition resize-none"></textarea>
+        </div>
+        <button type="submit" class="w-full rounded-md bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-gray-200">Enviar mensagem</button>
+        <p id="form-message" class="text-sm text-center hidden"></p>
+      </form>
+      <div class="mt-10 flex flex-wrap justify-center gap-5 text-sm text-gray-500">
+        <a href="mailto:meajuda.2edev@gmail.com" class="hover:text-white">meajuda.2edev@gmail.com</a><span aria-hidden="true">·</span>
+        <a href="https://github.com/elielreinan" target="_blank" rel="noopener noreferrer" class="hover:text-white">GitHub</a>
+        <span aria-hidden="true">·</span><a href="https://e2dev.me/" target="_blank" rel="noopener noreferrer" class="hover:text-white">e2dev.me</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-gray-900 bg-[#040404] py-6"><p class="text-center text-xs text-gray-600">© 2E.dev — Desenvolvimento de Software</p></footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+      mobileNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', mobileNav.classList.contains('open'));
+    });
+
+    document.querySelectorAll('#mobile-nav a').forEach(link => {
+      link.addEventListener('click', function() {
+        mobileNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formMessage = document.getElementById('form-message');
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      try {
+        const response = await fetch('https://formspree.io/f/mvvoezbz', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message })
+        });
+
+        if (response.ok) {
+          formMessage.textContent = '✓ Mensagem enviada com sucesso! Vamos analisar e retornar em breve.';
+          formMessage.classList.remove('hidden');
+          formMessage.classList.add('text-green-400');
+          contactForm.reset();
+        } else {
+          throw new Error('Erro ao enviar');
+        }
+      } catch (error) {
+        formMessage.textContent = '✗ Erro ao enviar mensagem. Tente enviar por email: meajuda.2edev@gmail.com';
+        formMessage.classList.remove('hidden');
+        formMessage.classList.add('text-red-400');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar mensagem';
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>
