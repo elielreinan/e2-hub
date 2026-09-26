@@ -3,11 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="2E.dev">
+  <meta name="description" content="2E.dev — Desenvolvimento de software com foco em código organizado, arquitetura clara e entrega de valor. Soluções web, APIs, automação e aplicações.">
   <meta name="theme-color" content="#050505">
-  <meta property="og:title" content="2E.dev — Desenvolvimento de Software">
-  <meta property="og:description" content="Software pensado para resolver problemas.">
-  <meta property="og:type" content="website">
+  <meta name="og:title" content="2E.dev — Desenvolvimento de Software">
+  <meta name="og:description" content="Software pensado para resolver problemas. Desenvolvemos aplicações web, APIs e soluções de automação com qualidade e propósito.">
+  <meta name="og:type" content="website">
+  <meta name="og:url" content="https://e2dev.me">
+  <meta name="og:site_name" content="2E.dev">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="2E.dev — Desenvolvimento de Software">
+  <meta name="twitter:description" content="Software pensado para resolver problemas.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "2E.dev",
+    "url": "https://e2dev.me",
+    "email": "meajuda.2edev@gmail.com",
+    "description": "Operação freelance focada em desenvolvimento de software com arquitetura clara e código organizado",
+    "sameAs": "https://github.com/elielreinan"
+  }
+  </script>
   <title>2E.dev — Desenvolvimento de Software</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
@@ -32,6 +48,20 @@
       color: transparent;
     }
     .segment-logo { filter: drop-shadow(0 0 8px rgba(255,255,255,.28)); }
+    .mobile-menu { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .mobile-menu.open { max-height: 500px; }
+    .stack-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      border-radius: 0.75rem;
+      border: 1px solid rgb(32, 32, 32);
+      background: rgb(13, 13, 13);
+      padding: 1.25rem 1.5rem;
+      min-width: 160px;
+      flex-shrink: 0;
+    }
     .stack-track {
       display: flex;
       width: max-content;
@@ -53,8 +83,8 @@
   <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
     <a href="#inicio" aria-label="2E.dev — início" class="flex items-center gap-3">
       <img src="assets/logo.svg" alt="2E.dev" class="segment-logo h-9 w-16 object-contain">
-      <span class="text-sm font-semibold tracking-tight text-white">
-        
+      <span class="text-sm font-semibold tracking-tight text-white"></span>
+    </a>
     <nav aria-label="Navegação principal" class="hidden items-center gap-7 md:flex">
       <a href="#sobre" class="text-sm text-gray-400 transition hover:text-white">Sobre</a>
       <a href="#servicos" class="text-sm text-gray-400 transition hover:text-white">Serviços</a>
@@ -63,7 +93,20 @@
       <a href="#contato" class="text-sm text-gray-400 transition hover:text-white">Contato</a>
     </nav>
     <a href="#contato" class="hidden rounded-md border border-gray-700 px-4 py-2 text-xs font-semibold text-white transition hover:border-gray-500 hover:bg-gray-900 sm:inline-flex">Solicitar projeto</a>
+    <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false" class="md:hidden text-gray-400 hover:text-white">
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
   </div>
+  <nav id="mobile-nav" class="mobile-menu border-t border-gray-800/60 md:hidden">
+    <div class="flex flex-col gap-1 px-6 py-4">
+      <a href="#sobre" class="rounded px-3 py-2 text-sm text-gray-400 transition hover:text-white hover:bg-gray-900">Sobre</a>
+      <a href="#servicos" class="rounded px-3 py-2 text-sm text-gray-400 transition hover:text-white hover:bg-gray-900">Serviços</a>
+      <a href="#stack" class="rounded px-3 py-2 text-sm text-gray-400 transition hover:text-white hover:bg-gray-900">Stack</a>
+      <a href="#projetos" class="rounded px-3 py-2 text-sm text-gray-400 transition hover:text-white hover:bg-gray-900">Projetos</a>
+      <a href="#contato" class="rounded px-3 py-2 text-sm text-gray-400 transition hover:text-white hover:bg-gray-900">Contato</a>
+      <a href="#contato" class="mt-2 rounded border border-gray-700 px-3 py-2 text-xs font-semibold text-white transition hover:border-gray-500 hover:bg-gray-900">Solicitar projeto</a>
+    </div>
+  </nav>
 </header>
 
 <main id="inicio">
@@ -130,25 +173,25 @@
     </div>
     <div class="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
       <div class="stack-track" aria-label="Carrossel de tecnologias">
-        <div class="flex items-center gap-4 px-2" aria-hidden="false">
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-java-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Java</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-python-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Python</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-mysql-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">SQL</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-react-original text-3xl"></i><span class="text-sm font-medium text-gray-300">React</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-vitejs-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Vite</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-css3-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">CSS</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-javascript-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">JavaScript</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-nodejs-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Node.js</span></div>
+        <div class="flex items-center gap-4 px-2">
+          <div class="stack-item"><i class="devicon-java-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Java</span></div>
+          <div class="stack-item"><i class="devicon-python-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Python</span></div>
+          <div class="stack-item"><i class="devicon-mysql-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">SQL</span></div>
+          <div class="stack-item"><i class="devicon-react-original text-3xl"></i><span class="text-sm font-medium text-gray-300">React</span></div>
+          <div class="stack-item"><i class="devicon-vitejs-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Vite</span></div>
+          <div class="stack-item"><i class="devicon-css3-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">CSS</span></div>
+          <div class="stack-item"><i class="devicon-javascript-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">JavaScript</span></div>
+          <div class="stack-item"><i class="devicon-nodejs-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Node.js</span></div>
         </div>
         <div class="flex items-center gap-4 px-2" aria-hidden="true">
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-java-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Java</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-python-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Python</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-mysql-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">SQL</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-react-original text-3xl"></i><span class="text-sm font-medium text-gray-300">React</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-vitejs-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Vite</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-css3-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">CSS</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-javascript-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">JavaScript</span></div>
-          <div class="flex min-w-40 items-center justify-center gap-3 rounded-xl border border-gray-800 bg-[#0d0d0d] px-6 py-5"><i class="devicon-nodejs-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Node.js</span></div>
+          <div class="stack-item"><i class="devicon-java-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Java</span></div>
+          <div class="stack-item"><i class="devicon-python-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Python</span></div>
+          <div class="stack-item"><i class="devicon-mysql-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">SQL</span></div>
+          <div class="stack-item"><i class="devicon-react-original text-3xl"></i><span class="text-sm font-medium text-gray-300">React</span></div>
+          <div class="stack-item"><i class="devicon-vitejs-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Vite</span></div>
+          <div class="stack-item"><i class="devicon-css3-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">CSS</span></div>
+          <div class="stack-item"><i class="devicon-javascript-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">JavaScript</span></div>
+          <div class="stack-item"><i class="devicon-nodejs-plain text-3xl"></i><span class="text-sm font-medium text-gray-300">Node.js</span></div>
         </div>
       </div>
     </div>
@@ -187,11 +230,28 @@
   </section>
 
   <section id="contato" class="border-t border-gray-800/60 py-24">
-    <div class="mx-auto max-w-3xl px-6 text-center">
-      <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Contato</p>
-      <h2 class="text-3xl font-bold text-white sm:text-5xl">Vamos transformar uma ideia em software?</h2>
-      <p class="mx-auto mt-5 max-w-xl text-sm leading-7 text-gray-400 sm:text-base">Conte sobre o projeto, o problema que precisa ser resolvido e o resultado esperado.</p>
-      <div class="mt-9"><a href="mailto:meajuda.2edev@gmail.com" class="rounded-md bg-white px-7 py-3 text-sm font-semibold text-black transition hover:bg-gray-200">Entrar em contato</a></div>
+    <div class="mx-auto max-w-3xl px-6">
+      <div class="text-center mb-12">
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">Contato</p>
+        <h2 class="text-3xl font-bold text-white sm:text-5xl">Vamos transformar uma ideia em software?</h2>
+        <p class="mx-auto mt-5 max-w-xl text-sm leading-7 text-gray-400 sm:text-base">Conte sobre o projeto, o problema que precisa ser resolvido e o resultado esperado.</p>
+      </div>
+      <form id="contact-form" class="rounded-2xl border border-gray-800 bg-[#0a0a0a] p-8 space-y-5">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Nome</label>
+          <input type="text" id="name" name="name" required class="w-full rounded-lg bg-[#0d0d0d] border border-gray-700 px-4 py-2 text-white placeholder-gray-500 focus:border-gray-500 focus:outline-none transition">
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+          <input type="email" id="email" name="email" required class="w-full rounded-lg bg-[#0d0d0d] border border-gray-700 px-4 py-2 text-white placeholder-gray-500 focus:border-gray-500 focus:outline-none transition">
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Mensagem</label>
+          <textarea id="message" name="message" rows="5" required class="w-full rounded-lg bg-[#0d0d0d] border border-gray-700 px-4 py-2 text-white placeholder-gray-500 focus:border-gray-500 focus:outline-none transition resize-none"></textarea>
+        </div>
+        <button type="submit" class="w-full rounded-md bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-gray-200">Enviar mensagem</button>
+        <p id="form-message" class="text-sm text-center hidden"></p>
+      </form>
       <div class="mt-10 flex flex-wrap justify-center gap-5 text-sm text-gray-500">
         <a href="mailto:meajuda.2edev@gmail.com" class="hover:text-white">meajuda.2edev@gmail.com</a><span aria-hidden="true">·</span>
         <a href="https://github.com/elielreinan" target="_blank" rel="noopener noreferrer" class="hover:text-white">GitHub</a>
@@ -202,5 +262,66 @@
 </main>
 
 <footer class="border-t border-gray-900 bg-[#040404] py-6"><p class="text-center text-xs text-gray-600">© 2E.dev — Desenvolvimento de Software</p></footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+      mobileNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', mobileNav.classList.contains('open'));
+    });
+
+    document.querySelectorAll('#mobile-nav a').forEach(link => {
+      link.addEventListener('click', function() {
+        mobileNav.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formMessage = document.getElementById('form-message');
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      try {
+        const response = await fetch('https://formspree.io/f/mvvoezbz', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message })
+        });
+
+        if (response.ok) {
+          formMessage.textContent = '✓ Mensagem enviada com sucesso! Vamos analisar e retornar em breve.';
+          formMessage.classList.remove('hidden');
+          formMessage.classList.add('text-green-400');
+          contactForm.reset();
+        } else {
+          throw new Error('Erro ao enviar');
+        }
+      } catch (error) {
+        formMessage.textContent = '✗ Erro ao enviar mensagem. Tente enviar por email: meajuda.2edev@gmail.com';
+        formMessage.classList.remove('hidden');
+        formMessage.classList.add('text-red-400');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar mensagem';
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>
